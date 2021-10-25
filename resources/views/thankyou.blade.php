@@ -1,0 +1,1 @@
+<center><h1>Thanks for Registration</h1></center>
