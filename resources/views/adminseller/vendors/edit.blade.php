@@ -83,6 +83,21 @@
                                 </div>
 
                                 <div class="col-lg-4">
+                                    <label>Membership Amount</label>
+                                     <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" disabled="" autocomplete="off" value="{{ $membership->amount }}">
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <label>Payment Type</label>
+                                    <select class="form-control" data-live-search="true" name="payment_type" disabled="">
+                                        <option value="">--select payment type--</option>
+                                        <option value="Cash" @if($membership->payment_type == 'Cash') selected @endif>Cash</option>
+                                        <option value="Card" @if($membership->payment_type == 'Card') selected @endif>Card</option>
+                                        <option value="UPI" @if($membership->payment_type == 'UPI') selected @endif>UPI</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-4">
                                     <label>Status:</label>
                                     <select class="form-control" name="status">
                                         <option value="1" @if($edit->status == 1) selected @endif>Active</option>

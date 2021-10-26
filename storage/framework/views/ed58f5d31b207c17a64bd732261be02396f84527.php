@@ -1,41 +1,40 @@
-@extends('admin.layout.auth')
+<?php $__env->startSection('content'); ?>
+<form class="kt-form login_form" id="login_form"  role="form" method="POST" action="<?php echo e(url('/customer/login')); ?>">
+                        <?php echo e(csrf_field()); ?>
 
-@section('content')
-<form class="kt-form login_form" id="login_form"  role="form" method="POST" action="{{ url('/customer/login') }}">
-                        {{ csrf_field() }}
                         	<div class="kt-login__signin">
 								<div class="kt-login__head">
 									<h3 class="kt-login__title">Sign In To Customer</h3>
 								</div>
 								</div>
 
-                        <div class="input-group {{ $errors->has('number') ? ' has-error' : '' }}">
-                                <input id="number" type="text" class="form-control" name="number" placeholder="Mobile No" onkeypress="return isNumber(event)" onkeyup="CheckCustomer($(this).val())" maxlength="10" value="{{ old('number') }}" autofocus>
+                        <div class="input-group <?php echo e($errors->has('number') ? ' has-error' : ''); ?>">
+                                <input id="number" type="text" class="form-control" name="number" placeholder="Mobile No" onkeypress="return isNumber(event)" onkeyup="CheckCustomer($(this).val())" maxlength="10" value="<?php echo e(old('number')); ?>" autofocus>
 
                         </div>
                         <span class="help-block">
-                            <strong class="error">{{ $errors->first('number') }}</strong>
+                            <strong class="error"><?php echo e($errors->first('number')); ?></strong>
                         </span>
 
-                                @if ($errors->has('number'))
+                                <?php if($errors->has('number')): ?>
                                     <span class="help-block">
-                                        <strong class="error">{{ $errors->first('number') }}</strong>
+                                        <strong class="error"><?php echo e($errors->first('number')); ?></strong>
                                     </span>
-                                @endif
-                        <!-- <div class="input-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <?php endif; ?>
+                        <!-- <div class="input-group<?php echo e($errors->has('password') ? ' has-error' : ''); ?>">
                                 <input id="password" type="password" class="form-control" name="password" placeholder="Password">
 
                                 
                         </div>
-@if ($errors->has('password'))
+<?php if($errors->has('password')): ?>
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong><?php echo e($errors->first('password')); ?></strong>
                                     </span>
-                                @endif -->
+                                <?php endif; ?> -->
 	                        
 								<div class="kt-login__actions">
 									<button type="submit" id="submit" disabled="" class="btn btn-brand btn-elevate kt-login__btn-primary">Sign In</button>
-									<!-- <a href="{{ url('/customer/register') }}"><button type="button" id="submit" class="btn btn-brand btn-elevate kt-login__btn-primary">Register</button></a> -->
+									<!-- <a href="<?php echo e(url('/customer/register')); ?>"><button type="button" id="submit" class="btn btn-brand btn-elevate kt-login__btn-primary">Register</button></a> -->
 								</div>
                     </form>
 
@@ -54,10 +53,10 @@
 
 		                    type: "POST",
 
-		                    url: "{{ route('customer.validate')}}",
+		                    url: "<?php echo e(route('customer.validate')); ?>",
 
 		                    data: {
-		                    	"_token": "{{ csrf_token() }}",
+		                    	"_token": "<?php echo e(csrf_token()); ?>",
 		                    	"number": evt
 		                    },
 
@@ -78,4 +77,6 @@
 		                });
 				    }
                 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/customer/auth/login.blade.php ENDPATH**/ ?>

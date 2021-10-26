@@ -24,12 +24,12 @@
 						@csrf
 						<thead>
 							<tr>
+								<th>Date</th>
 								<th>Order Number</th>
 								<!-- <th>Seller Name</th> -->
 								<th>Customer Name</th>								
 								<th>Amount</th>
-								<th>Credit </th>
-								<th>Date</th>
+								<th>Outlet </th>
 								<!-- <th>Order Status</th> -->
                                 <th>Action</th>
 							</tr>
@@ -77,6 +77,9 @@ if($status_id != '')  {
 			ajax: "{{ $datatable_url }}",
 			columns: [
 				{
+					"data": "order_date"
+				},
+				{
 					orderable: false,
                     searchable: true,
 					data: 'order_uniqueid',
@@ -88,16 +91,14 @@ if($status_id != '')  {
 					"data": "customer_name"
 				},
 				{
-					"data": "price"
+					"data": "total_price"
 				},
 
 				{
 
-					"data": "discount"
+					"data": "outlet"
 				},
-				{
-					"data": "order_date"
-				},
+				
     //             {
     //                 orderable: false,
     //                 searchable: false,

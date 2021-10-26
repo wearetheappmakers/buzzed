@@ -73,7 +73,6 @@
                                 
                                 <div class="col-lg-4">
                                     <label>Favourite:</label>
-                                    <!-- <textarea class="form-control" name="favourite" id="favourite"></textarea> -->
                                     <select class="form-control" name="favourite" id="favourite">
                                         <option value="beer">Beer</option>
                                         <option value="whisky">Whisky</option>
@@ -81,6 +80,21 @@
                                         <option value="vodka">Vodka</option>
                                         <option value="rum">Rum</option>
                                         <option value="cocktail">Cocktail</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <label>Membership Amount</label>
+                                     <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" required autocomplete="off">
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <label>Payment Type</label>
+                                    <select class="form-control" data-live-search="true" name="payment_type" required="">
+                                        <option value="">--select payment type--</option>
+                                        <option value="Cash">Cash</option>
+                                        <option value="Card">Card</option>
+                                        <option value="UPI">UPI</option>
                                     </select>
                                 </div>
 

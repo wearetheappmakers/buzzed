@@ -18,18 +18,18 @@
 
 			<div class="kt-portlet__body">
 				<div id="kt_table_1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-					<table class="table table-striped- table-bordered table-hover table-checkable datatable" id="datatable_rows">
+					<table class="table table-striped- table-bordered table-hover table-checkable datatable responsive" id="datatable_rows">
 						<?php echo csrf_field(); ?>
 						<thead>
 							<tr>
 								<th>Date</th>
 								<th>Order Number</th>
-								<!-- <th>Seller Name</th> -->
-								<th>Customer Name</th>								
+								<th>Outlet</th>
+								<th>Captain</th>								
+								<th>Payment Type</th>
 								<th>Amount</th>
-								<th>Outlet </th>
-								<!-- <th>Order Status</th> -->
-                                <th>Action</th>
+								<th>Discount Amount</th>
+								<th>Payable Amount</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -48,14 +48,6 @@
 	</div>
 </div>
 
-<?php
-if($status_id != '')  {
-    $datatable_url = route('admin.order.status.index', $status_id);
-} else {
-    $datatable_url = route('admin.order.index');
-}
-?>
-
 
 <?php $__env->stopSection(); ?>
 
@@ -72,7 +64,7 @@ if($status_id != '')  {
 				orderable: false,
 				targets: -1,
 			}],
-			ajax: "<?php echo e($datatable_url); ?>",
+			ajax: "<?php echo e(route('customer.order.index')); ?>",
 			columns: [
 				{
 					"data": "order_date"
@@ -82,31 +74,38 @@ if($status_id != '')  {
                     searchable: true,
 					data: 'order_uniqueid',
 				},
-				// {
-				// 	"data": "seller_name"
-				// },
 				{
-					"data": "customer_name"
+
+					"data": "outlet"
+				},
+				{
+
+					"data": "captain"
+				},{
+
+					"data": "payment_type"
+				},{
+
+					"data": "price"
+				},{
+
+					"data": "discount_price"
 				},
 				{
 					"data": "total_price"
 				},
 
-				{
-
-					"data": "outlet"
-				},
 				
     //             {
     //                 orderable: false,
     //                 searchable: false,
 				// 	"data": "order_status"
 				// },
-                {
-                    orderable: false,
-                    searchable: false,
-					"data": "action"
-				},
+    //             {
+    //                 orderable: false,
+    //                 searchable: false,
+				// 	"data": "action"
+				// },
 			]
 		});
 
@@ -135,4 +134,4 @@ if($status_id != '')  {
 	});
 </script>
 <?php $__env->stopPush(); ?>
-<?php echo $__env->make('admin.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/adminseller/order/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/customer/billhistory.blade.php ENDPATH**/ ?>

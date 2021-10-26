@@ -131,6 +131,11 @@
 
 			}],
 
+			dom: 'Bfrtip',
+	        buttons: [
+	            'csv', 'pdf'
+	        ],
+
 			ajax: "{{ route('admin.vendors.index',$type) }}",
 
 			columns: [

@@ -9,6 +9,8 @@ use App\Models\Address;
 use App\Models\OrderStatus;
 use App\Models\Settings;
 use App\Models\Discount;
+use App\Models\Captain;
+use App\Models\Outlet;
 use DataTables;
 use App\Models\OrderLine;
 use App\Customer;
@@ -89,10 +91,14 @@ class OrderController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
+            
             $query = OrderHeader::whereRaw('1 = 1');
-            if($request->status_id) {
-                $query->where('order_status_id', $request->status_id);
+            if (\Auth::guard('customer')->check()) {
+                $query->where('customer_id', \Auth::guard('customer')->user()->id);
             }
+            // if($request->status_id) {
+            //     $query->where('order_status_id', $request->status_id);
+            // }
             $query =  $query->orderBy('id','DESC')->get();
             
             $order_status = OrderStatus::where('status', 1)->get();
@@ -117,6 +123,15 @@ class OrderController extends Controller
                     $user = User::where('id',$row->customer_id)->value('fname');
                     return $user;
                 })
+                ->addColumn('captain', function ($row) {
+                    $captain = Captain::where('id',$row->captain_id)->value('name');
+                    return $captain;
+                })
+                ->addColumn('outlet', function ($row) {
+                    $outlet = Captain::where('id',$row->captain_id)->value('outlet');
+                    $name = Outlet::where('id',$outlet)->value('name');
+                    return $name;
+                })
                 
                 ->addColumn('order_date',function($row){
                     $btn = date('d-m-Y',strtotime($row->created_at));
@@ -134,7 +149,7 @@ class OrderController extends Controller
 
                     return $row->discount_price;
                 })
-                ->rawColumns(['order_status','customer_name','type','action','order_date'])
+                ->rawColumns(['order_status','customer_name','outlet','captain','type','action','order_date'])
                 ->make(true);
         }
         $status_id = '';
@@ -171,7 +186,10 @@ class OrderController extends Controller
         // dd($order_header->toArray());
         $address = Address::where('customer_id',$order_header->customer_id)->value('address');
         $order_status = OrderStatus::where('status',1)->where('show_on_timeline',1)->get();
-        return view('adminseller.order.detail', compact('order_header', 'order_status','address'));
+        $outlet = Captain::where('id',$order_header->captain_id)->value('outlet');
+        $outlet_name = Outlet::where('id',$outlet)->value('name');
+
+        return view('adminseller.order.detail', compact('order_header', 'order_status','address','outlet_name'));
     }
     public function print($order_header_id, Request $request)
     {
@@ -333,16 +351,16 @@ class OrderController extends Controller
     public function addorder(Request $request){
 
         $param = $request->all();
-        $discount=Discount::where('id',$request->source_id)->first();
-        $param['discount_per']=$discount->discount_per;
-        $param['discount_price']=($discount->discount_per * $request->price)/100;
+        // $discount=Discount::where('id',$request->source_id)->first();
+        // $param['discount_per']=$discount->discount_per;
+        // $param['discount_price']=($discount->discount_per * $request->price)/100;
 
         $order = OrderHeader::latest()->first();
 
         if (!empty($order)) {
-            $order_id = 'MHF-'.($order->id+1);
+            $order_id = 'Buzzed-'.($order->id+1);
         }else{
-            $order_id = 'MHF-001';
+            $order_id = 'Buzzed-1';
         }
         $param['order_uniqueid'] = $order_id;
         $result = OrderHeader::create($param);
@@ -352,6 +370,10 @@ class OrderController extends Controller
         }else{
             return response()->json(['status'=>'error']);
         }
+    }
+
+    public function billHistory(){
+        return view('customer.billhistory');
     }
 
 }

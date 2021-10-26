@@ -4,9 +4,11 @@ namespace App\Http\Controllers\AdminSeller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Models\Membership;
 use DataTables;
 use DB;
 use Hash;
+use Carbon\Carbon;
 
 class VendorController extends Controller
 {
@@ -64,9 +66,18 @@ class VendorController extends Controller
         $param = $request->all();
         $param['password'] = isset($param['spassword']) ? bcrypt($param['spassword']) : bcrypt(12345678);
         $param['role'] = 1;
-        $vendor = User::create($param);
+        unset($param['amount']);
+        unset($param['payment_type']);
 
-        if ($vendor){
+        $customer = User::create($param);
+
+        if ($customer){
+            Membership::create([
+                'customer_id' => $customer->id,
+                'amount' => $request->amount,
+                'payment_type' => $request->payment_type,
+                'validity' => Carbon::now()->addYear(),
+            ]);
 			return response()->json(['status'=>'success']);
 		}else{
 			return response()->json(['status'=>'error']);
@@ -82,6 +93,7 @@ class VendorController extends Controller
         $data['module'] = $this->viewName;
         $data['resourcePath'] = $this->view;
         $data['index'] = route('admin.' . $this->route . '.index','all');
+        $data['membership'] = Membership::where('customer_id',$id)->latest()->first();
 
 		return view('adminseller.vendors.edit')->with($data);
     }

@@ -85,6 +85,21 @@
                                 </div>
 
                                 <div class="col-lg-4">
+                                    <label>Membership Amount</label>
+                                     <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" required autocomplete="off">
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <label>Payment Type</label>
+                                    <select class="form-control" data-live-search="true" name="payment_type" required="">
+                                        <option value="">--select payment type--</option>
+                                        <option value="Cash">Cash</option>
+                                        <option value="Card">Card</option>
+                                        <option value="UPI">UPI</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-4">
                                     <label>Status:</label>
                                     <select class="form-control" name="status">
                                         <option value="1">Active</option>

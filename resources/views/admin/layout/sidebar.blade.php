@@ -52,8 +52,8 @@
                 <!-- </span> -->
             </form>
             @endif
-            @if(Auth::guard('vendor')->check())
-            <form id="logout-form" action="{{  url('vendor/logout') }}" method="POST" >
+            @if(Auth::guard('customer')->check())
+            <form id="logout-form" action="{{  url('customer/logout') }}" method="POST" >
                             @csrf
                 <button class="btn btn-success btn-sm btn-bold btn-font-md" type="submit"  style="color: white;">Logout</button>   
             </form>

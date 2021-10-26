@@ -129,6 +129,11 @@
 
 			}],
 
+			dom: 'Bfrtip',
+	        buttons: [
+	            'csv', 'pdf'
+	        ],
+
 			ajax: "<?php echo e(route('admin.vendors.index',$type)); ?>",
 
 			columns: [

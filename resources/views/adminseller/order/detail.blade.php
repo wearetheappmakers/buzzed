@@ -84,17 +84,7 @@
 
 					<div class="col-lg-3 col-md-3 col-3">
 					</div>
-					<div class="col-lg-6 col-md-6 col-6">
-						@php
-						$d='order_id:'.$order_header->id.',name:'.App\User::where('id',$order_header->customer_id)->value('fname').',Amount:'.$order_header->price.',Credit:'.$order_header->discount_price.',Date:'.\Carbon\Carbon::parse($order_header->created_at)->format('d-m-Y');
-						$data=[
-    'user_name'=>App\User::where('id',$order_header->customer_id)->value('fname'),
-    'credit'=>$order_header->discount_price,
-    'date'=>\Carbon\Carbon::parse($order_header->created_at)->format('d-m-Y')
-]
-						@endphp
-						{!! QrCode::size(250)->generate($d); !!}
-					</div>
+				
 					<div class="col-lg-3  col-md-3 col-3">
 					</div>
 
@@ -238,12 +228,11 @@
 					</a>
 				</div> -->
 			</div>
-				<div class="row" style="margin-top: 70px;" >
+				<!-- <div class="row" style="margin-top: 70px;" >
 					<br>
 					<br><br>
 					<br>
 					<div class="col-lg-12">
-
 						<p>Dear {{App\User::where('id',$order_header->customer_id)->value('fname')}} {{App\User::where('id',$order_header->customer_id)->value('lname')}}. Thank you for ordering from Myhomefood.
 						</p>
 						<p>	We would like to gift you with a voucher of ({{$order_header->discount_price}} credit amount)  in return.
@@ -252,42 +241,68 @@
 						</p>
 						<p>Date :{{\Carbon\Carbon::parse($order_header->created_at)->format('d-m-Y')}}</p>
 					</div>
-				</div>
-				<div class="row noprint">
-
-					<div class="col-sm-12 col-md-12 col-lg-12">
-						<br>
-						<br>
-						<button type="button" class="btn btn-dark btn-default btn-sm btn-flat print noprint"
-								style="margin-left: 20px;"><span class="fa fa-print"></span> Print
-						</button>
-					</div>
-				</div>
+				</div> -->
+				
 
 
-			<div id="kt_table_1_wrapper" class="dt-bootstrap4">
+			<div id="kt_table_1_wrapper" class="dt-bootstrap4 col-6">
 				<table class="table table-hover">
 					@csrf
-					<thead>
-						<tr>
-							
-							<!-- <th>Product</th>
-							<th>Price</th>
-							<th>Quanity</th>
-							<th>Total Quanity</th>
-							<th>IGST</th>
-							<th>CGST</th>
-							<th>SGSt</th>
-							<th>Total Price</th>
-							@if($order_header->order_status_id == 6)
-							<th>Reason</th>
-							<th>Images</th>
-							<th>Status</th>
-							<th>Action</th>
-							@endif -->
-						</tr>
-					</thead>
 					<tbody>
+						<tr>
+							<td>Order No</td>
+							<td>{{ $order_header->order_uniqueid }}</td>
+						</tr>
+
+						<tr>
+							<td>Date</td>
+							<td>{{\Carbon\Carbon::parse($order_header->created_at)->format('d-m-Y')}}</td>
+						</tr>
+
+						<tr>
+							<td>Outlet</td>
+							<td>{{ $outlet_name }}</td>
+						</tr>
+
+						<tr>
+							<td>Captain</td>
+							<td>{{ App\Models\Captain::where('id',$order_header->captain_id)->value('name') }}</td>
+						</tr>
+
+						<tr>
+							<td>Payment Type</td>
+							<td>{{ $order_header->payment_type }}</td>
+						</tr>
+
+						<tr>
+							<td>Amount</td>
+							<td>{{ $order_header->price }}</td>
+						</tr>
+
+						<tr>
+							<td>Discount Amount</td>
+							<td>{{ $order_header->discount_price }}</td>
+						</tr>
+
+						<tr>
+							<td>Payable Amount</td>
+							<td>{{ $order_header->total_price }}</td>
+						</tr>
+
+						<tr>
+							<td colspan="2">
+							<div class="row noprint">
+
+								<div class="col-sm-12 col-md-12 col-lg-12">
+									<br>
+									<br>
+									<button type="button" class="btn btn-dark btn-default btn btn-flat print noprint"
+											style="margin-left: 20px;"><span class="fa fa-print"></span> Print
+									</button>
+								</div>
+							</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>

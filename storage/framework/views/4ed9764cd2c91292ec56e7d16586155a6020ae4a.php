@@ -53,8 +53,8 @@
                 <!-- </span> -->
             </form>
             <?php endif; ?>
-            <?php if(Auth::guard('vendor')->check()): ?>
-            <form id="logout-form" action="<?php echo e(url('vendor/logout')); ?>" method="POST" >
+            <?php if(Auth::guard('customer')->check()): ?>
+            <form id="logout-form" action="<?php echo e(url('customer/logout')); ?>" method="POST" >
                             <?php echo csrf_field(); ?>
                 <button class="btn btn-success btn-sm btn-bold btn-font-md" type="submit"  style="color: white;">Logout</button>   
             </form>
