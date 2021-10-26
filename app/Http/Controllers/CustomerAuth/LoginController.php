@@ -64,12 +64,6 @@ class LoginController extends Controller
             return redirect()->intended('customer/home')
                         ->withSuccess('You have Successfully loggedin');
         }
-
-         $credentials = $request->only('number',);
-        if (Auth::guard('customer')->attempt($credentials)) {
-            return redirect()->intended('customer/home')
-                        ->withSuccess('You have Successfully loggedin');
-        }
   
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
