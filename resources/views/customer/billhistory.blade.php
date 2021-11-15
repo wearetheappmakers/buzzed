@@ -27,7 +27,7 @@
 								<th>Date</th>
 								<th>Order Number</th>
 								<th>Outlet</th>
-								<th>Captain</th>								
+								<th>Steward</th>								
 								<th>Payment Type</th>
 								<th>Amount</th>
 								<th>Discount Amount</th>
