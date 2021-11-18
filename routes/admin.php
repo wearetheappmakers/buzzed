@@ -57,6 +57,7 @@ Route::resource('topdeals','AdminSeller\TopDealsController');
 Route::resource('offer','AdminSeller\OfferController');
 Route::resource('emailtemplate','AdminSeller\EmailTemplateController');
 Route::resource('revenue','AdminSeller\RevenueController');
+Route::resource('staff','AdminSeller\StaffController');
 // Route::resource('vendors','AdminSeller\VendorController');
 
 Route::resource('captain','AdminSeller\CaptainController');
@@ -164,4 +165,5 @@ Route::post('revenue-destory','AdminSeller\RevenueController@destory')->name('re
 Route::post('discount-destory','AdminSeller\DiscountController@destory')->name('discount.destory');
 Route::post('captain-destory','AdminSeller\CaptainController@destory')->name('captain.destory');
 Route::post('outlet-destory','AdminSeller\OutletController@destory')->name('outlet.destory');
+Route::post('staff-destory','AdminSeller\StaffController@destory')->name('staff.destory');
 

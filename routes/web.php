@@ -57,6 +57,45 @@ Route::group(['prefix' => 'customer'], function () {
     Route::any('/billhistory', 'AdminSeller\OrderController@billHistory')->name('bill.history');
     Route::any('/get-order-list/', 'AdminSeller\OrderController@index')->name('customer.order.index');
     Route::any('/customer/validate/', 'CustomerAuth\LoginController@customerValidate')->name('customer.validate');
+    Route::get('/get-saved-balance', 'AdminSeller\OrderController@getSavedBalance')->name('get.saved.balance');
+});
+
+Route::group(['prefix' => 'manager'], function () {
+  Route::get('/login', 'ManagerAuth\LoginController@showLoginForm')->name('login');
+  Route::post('/login', 'ManagerAuth\LoginController@login');
+  Route::post('/logout', 'ManagerAuth\LoginController@logout')->name('logout');
+
+  Route::get('/register', 'ManagerAuth\RegisterController@showRegistrationForm')->name('register');
+  Route::post('/register', 'ManagerAuth\RegisterController@register');
+
+  Route::post('/password/email', 'ManagerAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+  Route::post('/password/reset', 'ManagerAuth\ResetPasswordController@reset')->name('password.email');
+  Route::get('/password/reset', 'ManagerAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+  Route::get('/password/reset/{token}', 'ManagerAuth\ResetPasswordController@showResetForm');
+
+  Route::get('/home', function () {
+    return view('manager.home');
+  })->name('home');
+
+});
+
+Route::group(['prefix' => 'waiter'], function () {
+  Route::get('/login', 'WaiterAuth\LoginController@showLoginForm')->name('login');
+  Route::post('/login', 'WaiterAuth\LoginController@login');
+  Route::post('/logout', 'WaiterAuth\LoginController@logout')->name('logout');
+
+  Route::get('/register', 'WaiterAuth\RegisterController@showRegistrationForm')->name('register');
+  Route::post('/register', 'WaiterAuth\RegisterController@register');
+
+  Route::post('/password/email', 'WaiterAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+  Route::post('/password/reset', 'WaiterAuth\ResetPasswordController@reset')->name('password.email');
+  Route::get('/password/reset', 'WaiterAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+  Route::get('/password/reset/{token}', 'WaiterAuth\ResetPasswordController@showResetForm');
+
+  Route::get('/home', function () {
+    return view('waiter.home');
+  })->name('home');
+
 });
 
 // Route::group(['prefix' => 'vendor'], function () {

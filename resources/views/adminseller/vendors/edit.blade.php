@@ -60,50 +60,52 @@
                                     <label>Birth Date:</label>
                                     <input type="date" class="form-control" placeholder="Enter Birth Date" name="b_date" value="{{ $edit->b_date }}"  id="b_date" required autocomplete="off">
                                 </div>
-                                
-                                <div class="col-lg-4">
 
-                                    <label>Password:</label>
-                                    <input type="password" class="form-control" placeholder="Enter password" value="{{ $edit->spassword }}" name="spassword" id="spassword" required autocomplete="off">
+                                <div class="col-lg-4">
+                                    <label>Validity Date:</label>
+                                    <input type="date" class="form-control" placeholder="Enter Validity Date" name="validity_date" id="validity_date" value="{{ $edit->validity_date }}" autocomplete="off">
                                 </div>
-                               
+                                
                             </div>
                             <div class="form-group row">
-                                
+
                                 <div class="col-lg-4">
                                     <label>Favourite:</label>
                                     <select class="form-control" name="favourite" id="favourite">
-                                        <option value="beer" @if($edit->favourite == 'beer') selected @endif>Beer</option>
-                                        <option value="whisky" @if($edit->favourite == 'whisky') selected @endif>Whisky</option>
-                                        <option value="wine" @if($edit->favourite == 'wine') selected @endif>Wine</option>
-                                        <option value="vodka" @if($edit->favourite == 'vodka') selected @endif>Vodka</option>
-                                        <option value="rum" @if($edit->favourite == 'rum') selected @endif>Rum</option>
-                                        <option value="cocktail" @if($edit->favourite == 'cocktail') selected @endif>Cocktail</option>
+                                        <option value="beer" @if($edit->gender == 'beer') selected @endif >Beer</option>
+                                        <option value="whisky" @if($edit->gender == 'whisky') selected @endif >Whisky</option>
+                                        <option value="wine" @if($edit->gender == 'wine') selected @endif >Wine</option>
+                                        <option value="vodka" @if($edit->gender == 'vodka') selected @endif >Vodka</option>
+                                        <option value="rum" @if($edit->gender == 'rum') selected @endif >Rum</option>
+                                        <option value="cocktail" @if($edit->gender == 'cocktail') selected @endif >Cocktail</option>
                                     </select>
                                 </div>
-
+                                
                                 <div class="col-lg-4">
                                     <label>Membership Amount</label>
-                                     <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" disabled="" autocomplete="off" value="{{ $membership->amount }}">
+                                     <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" value="{{ $edit->amount }}" required autocomplete="off">
                                 </div>
 
                                 <div class="col-lg-4">
                                     <label>Payment Type</label>
-                                    <select class="form-control" data-live-search="true" name="payment_type" disabled="">
+                                    <select class="form-control" data-live-search="true" name="payment_type" required="">
                                         <option value="">--select payment type--</option>
-                                        <option value="Cash" @if($membership->payment_type == 'Cash') selected @endif>Cash</option>
-                                        <option value="Card" @if($membership->payment_type == 'Card') selected @endif>Card</option>
-                                        <option value="UPI" @if($membership->payment_type == 'UPI') selected @endif>UPI</option>
+                                        <option value="Cash" @if($edit->gender == 'Cash') selected @endif >Cash</option>
+                                        <option value="Card" @if($edit->gender == 'Card') selected @endif >Card</option>
+                                        <option value="UPI" @if($edit->gender == 'UPI') selected @endif >UPI</option>
                                     </select>
                                 </div>
 
+                            </div>
+
+                            <div class="form-group row">
                                 <div class="col-lg-4">
-                                    <label>Status:</label>
-                                    <select class="form-control" name="status">
-                                        <option value="1" @if($edit->status == 1) selected @endif>Active</option>
-                                        <option value="0" @if($edit->status == 0) selected @endif>Inactive</option>
-                                    </select>
-                                </div>
+                                        <label>Status:</label>
+                                        <select class="form-control" name="status">
+                                            <option value="1" @if($edit->status == 1) selected @endif>Active</option>
+                                            <option value="0" @if($edit->status == 0) selected @endif>Inactive</option>
+                                        </select>
+                                    </div>
                             </div>
 
                         </div>

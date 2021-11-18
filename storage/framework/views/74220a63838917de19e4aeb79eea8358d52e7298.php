@@ -266,7 +266,7 @@
 						</tr>
 
 						<tr>
-							<td>Captain</td>
+							<td>Steward</td>
 							<td><?php echo e(App\Models\Captain::where('id',$order_header->captain_id)->value('name')); ?></td>
 						</tr>
 

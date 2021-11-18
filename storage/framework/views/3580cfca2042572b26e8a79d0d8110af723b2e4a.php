@@ -60,17 +60,17 @@
                                     <label>Birth Date:</label>
                                     <input type="date" class="form-control" placeholder="Enter Birth Date" name="b_date" id="b_date" required autocomplete="off">
                                 </div>
-                                <div class="col-lg-4">
+                                <!-- <div class="col-lg-4">
                                     <label>Password:</label>
                                     <input type="password" class="form-control" placeholder="Enter password" name="spassword" id="spassword" required autocomplete="off">
-                                </div>
-                                <!-- <div class="col-lg-4">
-                                    <label>Commission(Only 2 digit valid in %):</label>
-                                    <input type="text" class="form-control" placeholder="Enter commission" onkeypress="return isNumber(event)" maxlength="2" name="commission" value="0" id="commission" autocomplete="off">
                                 </div> -->
+                                <div class="col-lg-4">
+                                    <label>Validity Date:</label>
+                                    <input type="date" class="form-control" placeholder="Enter Validity Date" name="validity_date" id="validity_date" autocomplete="off">
+                                </div>
                             </div>
                             <div class="form-group row">
-                                
+
                                 <div class="col-lg-4">
                                     <label>Favourite:</label>
                                     <select class="form-control" name="favourite" id="favourite">
@@ -82,7 +82,7 @@
                                         <option value="cocktail">Cocktail</option>
                                     </select>
                                 </div>
-
+                                
                                 <div class="col-lg-4">
                                     <label>Membership Amount</label>
                                      <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" required autocomplete="off">
@@ -98,6 +98,9 @@
                                     </select>
                                 </div>
 
+                            </div>
+
+                            <div class="form-group row">
                                 <div class="col-lg-4">
                                     <label>Status:</label>
                                     <select class="form-control" name="status">

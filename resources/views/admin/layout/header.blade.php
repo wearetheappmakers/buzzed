@@ -81,6 +81,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
 	<script src="https://momentjs.com/downloads/moment.js" type="text/javascript"></script>
 
+	<script src="https://momentjs.com/downloads/moment.js" type="text/javascript"></script>
+
 	<!--begin::Layout Skins(used by all pages) -->
 
 
@@ -178,15 +180,18 @@ License: You must have a valid license purchased only from themeforest(the above
 
 							@if(Auth::guard('admin')->check())
 
+							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.order.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">All Bills</span></a></li>
+
 							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.vendors.index','all')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Customer</span></a></li>
+
+							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.captain.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Captain</span></a></li>
 
 							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.discount.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Discount Master</span></a></li>
 
 							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.outlet.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Outlet</span></a></li>
 
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.captain.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Captain</span></a></li>
+							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.staff.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Operations Manager / Waiters</span></a></li>
 
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.order.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">All Bills</span></a></li>
 
 
 							<!-- <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.brand.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-bookmark"></i><span class="kt-menu__link-text">Brand</span></a></li>

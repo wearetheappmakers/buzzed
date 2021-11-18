@@ -29,6 +29,7 @@
 								<!-- <th>Seller Name</th> -->
 								<th>Customer Name</th>								
 								<th>Amount</th>
+								<th>Payment Type</th>
 								<th>Outlet </th>
 								<!-- <th>Order Status</th> -->
                                 <th>Action</th>
@@ -92,6 +93,9 @@ if($status_id != '')  {
 				},
 				{
 					"data": "total_price"
+				},
+				{
+					"data": "payment_type"
 				},
 
 				{

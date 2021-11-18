@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\AdminSeller;
 
 use App\Http\Controllers\Controller;
-use App\Models\Captain;
-use App\Models\Outlet;
+use App\Models\Staff;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -12,13 +11,13 @@ use DataTables;
 use App\Http\Requests\ColorRequest;
 use DB;
 
-class CaptainController extends Controller
+class StaffController extends Controller
 {
-    public function __construct(Captain $s)
+    public function __construct(Staff $s)
     {
-        $this->view = 'captain';
-        $this->route = 'captain';
-        $this->viewName = 'Steward';
+        $this->view = 'staff';
+        $this->route = 'staff';
+        $this->viewName = 'Staff';
         $this->model = $s;
     }
     /**
@@ -59,6 +58,8 @@ class CaptainController extends Controller
 		} 
 
         $data['module']= $this->viewName;
+        $data['url']= route('admin.'.$this->route . '.index');
+        $data['create']= route('admin.'.$this->route . '.create');
 
         return view('adminseller.'.$this->view . '.index')->with($data);
     }
@@ -74,7 +75,6 @@ class CaptainController extends Controller
         $data['title'] = 'Add ' . $this->viewName;
         $data['module'] = $this->viewName;
         $data['resourcePath'] = $this->view;
-        $data['outlet'] = Outlet::where('status',1)->get();
 
         return view('admin.general.add_form')->with($data);
     }
@@ -92,6 +92,7 @@ class CaptainController extends Controller
         // dd($request->all());
         $param = $request->all();
         $status=empty($request->status)? 0 : $request->status;
+        $param['password'] = isset($param['spassword']) ? bcrypt($param['spassword']) : bcrypt(12345678);
         unset($param['status']);
 
         $color = $this->model->create($param);
@@ -129,7 +130,6 @@ class CaptainController extends Controller
         $data['url'] = route('admin.' . $this->route . '.update', [$this->view => $id]);
         $data['module'] = $this->viewName;
         $data['resourcePath'] = $this->view;
-        $data['outlet'] = Outlet::where('status',1)->get();
         
 		return view('admin.general.edit_form', compact('data'));
     }
@@ -146,7 +146,8 @@ class CaptainController extends Controller
         $param = $request->all();
         $status=empty($request->status)? 0 : $request->status;
         unset($param['_token'], $param['_method'],$param['status']);
-
+        $param['password'] = isset($param['spassword']) ? bcrypt($param['spassword']) : bcrypt(12345678);
+        
         $color = $this->model->where('id', $id)->first();
         $color->status=$status;
         $color->update($param);

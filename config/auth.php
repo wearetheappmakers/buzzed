@@ -45,9 +45,14 @@ return [
             'provider' => 'vendors',
         ],
 
-        'AffUser' => [
+        'waiter' => [
             'driver' => 'session',
-            'provider' => 'AffiliUser',
+            'provider' => 'waiters',
+        ],
+
+        'manager' => [
+            'driver' => 'session',
+            'provider' => 'managers',
         ],
 
         'admin' => [
@@ -95,9 +100,14 @@ return [
             'model' => App\User::class,
         ],
 
-        'AffiliUser' => [
+        'waiters' => [
             'driver' => 'eloquent',
-            'model' => App\AffiliateUser::class,
+            'model' => App\User::class,
+        ],
+
+        'managers' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
         ],
 
         'admins' => [
@@ -138,6 +148,17 @@ return [
             'expire' => 60,
         ],
 
+        'waiters' => [
+            'provider' => 'waiters',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'managers' => [
+            'provider' => 'managers',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
 
         'admins' => [
             'provider' => 'admins',

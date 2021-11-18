@@ -59,50 +59,53 @@
                                     <label>Birth Date:</label>
                                     <input type="date" class="form-control" placeholder="Enter Birth Date" name="b_date" value="<?php echo e($edit->b_date); ?>"  id="b_date" required autocomplete="off">
                                 </div>
-                                
-                                <div class="col-lg-4">
 
-                                    <label>Password:</label>
-                                    <input type="password" class="form-control" placeholder="Enter password" value="<?php echo e($edit->spassword); ?>" name="spassword" id="spassword" required autocomplete="off">
+                                <div class="col-lg-4">
+                                    <label>Validity Date:</label>
+                                    <input type="date" class="form-control" placeholder="Enter Validity Date" name="validity_date" id="validity_date" value="<?php echo e($edit->validity_date); ?>" autocomplete="off">
                                 </div>
-                               
+                                
                             </div>
                             <div class="form-group row">
-                                
+
                                 <div class="col-lg-4">
                                     <label>Favourite:</label>
                                     <select class="form-control" name="favourite" id="favourite">
-                                        <option value="beer" <?php if($edit->favourite == 'beer'): ?> selected <?php endif; ?>>Beer</option>
-                                        <option value="whisky" <?php if($edit->favourite == 'whisky'): ?> selected <?php endif; ?>>Whisky</option>
-                                        <option value="wine" <?php if($edit->favourite == 'wine'): ?> selected <?php endif; ?>>Wine</option>
-                                        <option value="vodka" <?php if($edit->favourite == 'vodka'): ?> selected <?php endif; ?>>Vodka</option>
-                                        <option value="rum" <?php if($edit->favourite == 'rum'): ?> selected <?php endif; ?>>Rum</option>
-                                        <option value="cocktail" <?php if($edit->favourite == 'cocktail'): ?> selected <?php endif; ?>>Cocktail</option>
+                                        <option value="beer" <?php if($edit->gender == 'beer'): ?> selected <?php endif; ?> >Beer</option>
+                                        <option value="whisky" <?php if($edit->gender == 'whisky'): ?> selected <?php endif; ?> >Whisky</option>
+                                        <option value="wine" <?php if($edit->gender == 'wine'): ?> selected <?php endif; ?> >Wine</option>
+                                        <option value="vodka" <?php if($edit->gender == 'vodka'): ?> selected <?php endif; ?> >Vodka</option>
+                                        <option value="rum" <?php if($edit->gender == 'rum'): ?> selected <?php endif; ?> >Rum</option>
+                                        <option value="cocktail" <?php if($edit->gender == 'cocktail'): ?> selected <?php endif; ?> >Cocktail</option>
                                     </select>
                                 </div>
-
+                                
                                 <div class="col-lg-4">
                                     <label>Membership Amount</label>
-                                     <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" disabled="" autocomplete="off" value="<?php echo e($membership->amount); ?>">
+                                     <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" value="<?php echo e($edit->amount); ?>" required autocomplete="off">
                                 </div>
 
                                 <div class="col-lg-4">
                                     <label>Payment Type</label>
-                                    <select class="form-control" data-live-search="true" name="payment_type" disabled="">
+                                    <select class="form-control" data-live-search="true" name="payment_type" required="">
                                         <option value="">--select payment type--</option>
-                                        <option value="Cash" <?php if($membership->payment_type == 'Cash'): ?> selected <?php endif; ?>>Cash</option>
-                                        <option value="Card" <?php if($membership->payment_type == 'Card'): ?> selected <?php endif; ?>>Card</option>
-                                        <option value="UPI" <?php if($membership->payment_type == 'UPI'): ?> selected <?php endif; ?>>UPI</option>
+                                        <option value="Cash" <?php if($edit->gender == 'Cash'): ?> selected <?php endif; ?> >Cash</option>
+                                        <option value="Card" <?php if($edit->gender == 'Card'): ?> selected <?php endif; ?> >Card</option>
+                                        <option value="UPI" <?php if($edit->gender == 'UPI'): ?> selected <?php endif; ?> >UPI</option>
                                     </select>
                                 </div>
 
+                            </div>
+
+                            <div class="form-group row">
+
                                 <div class="col-lg-4">
-                                    <label>Status:</label>
-                                    <select class="form-control" name="status">
-                                        <option value="1" <?php if($edit->status == 1): ?> selected <?php endif; ?>>Active</option>
-                                        <option value="0" <?php if($edit->status == 0): ?> selected <?php endif; ?>>Inactive</option>
-                                    </select>
-                                </div>
+                                        <label>Status:</label>
+                                        <select class="form-control" name="status">
+                                            <option value="1" <?php if($edit->status == 1): ?> selected <?php endif; ?>>Active</option>
+                                            <option value="0" <?php if($edit->status == 0): ?> selected <?php endif; ?>>Inactive</option>
+                                        </select>
+                                    </div>
                             </div>
 
                         </div>

@@ -358,9 +358,9 @@ class OrderController extends Controller
         $order = OrderHeader::latest()->first();
 
         if (!empty($order)) {
-            $order_id = 'Buzzed-'.($order->id+1);
+            $order_id = '1FAM-'.($order->id+1);
         }else{
-            $order_id = 'Buzzed-1';
+            $order_id = '1FAM-1';
         }
         $param['order_uniqueid'] = $order_id;
         $result = OrderHeader::create($param);
@@ -374,6 +374,17 @@ class OrderController extends Controller
 
     public function billHistory(){
         return view('customer.billhistory');
+    }
+
+    public function getSavedBalance(){
+
+        $saved_balance = OrderHeader::where('customer_id',\Auth::guard('customer')->user()->id)->sum('discount_price');
+
+        if ($saved_balance){
+            return response()->json(['status'=>'success', 'saved_balance' => $saved_balance, 'user' => \Auth::guard('customer')->user() ]);
+        }else{
+            return response()->json(['status'=>'error']);
+        }
     }
 
 }
