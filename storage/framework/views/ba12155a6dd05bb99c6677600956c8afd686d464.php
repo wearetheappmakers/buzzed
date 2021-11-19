@@ -12,7 +12,7 @@
 
         </div>
     <?php endif; ?>
-    <form class="kt-form" method="POST" role="form" action="<?php echo e(url('/manager/password/email')); ?>">
+    <form class="kt-form" method="POST" role="form" action="<?php echo e(url('/waiter/password/email')); ?>">
         <?php echo e(csrf_field()); ?>
 
         <div class="input-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
@@ -25,10 +25,10 @@
         </div>
         <div class="kt-login__actions">
             <button type="submit" class="btn btn-brand btn-elevate kt-login__btn-primary">Request</button>&nbsp;&nbsp;
-        <button class="btn btn-light btn-elevate kt-login__btn-secondary"><a href="<?php echo e(url('manager/login')); ?>">Cancel</a></button>
+        <button class="btn btn-light btn-elevate kt-login__btn-secondary"><a href="<?php echo e(url('waiter/login')); ?>">Cancel</a></button>
         </div>
     </form>
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('manager.layout.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/manager/auth/passwords/email.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('waiter.layout.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/waiter/auth/passwords/email.blade.php ENDPATH**/ ?>

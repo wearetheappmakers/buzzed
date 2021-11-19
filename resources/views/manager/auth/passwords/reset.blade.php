@@ -1,8 +1,8 @@
-@extends('vendor.layout.auth')
+@extends('manager.layout.auth')
 
 @section('content')
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/vendor/password/reset') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/manager/password/reset') }}">
                         {{ csrf_field() }}
 
                         <input type="hidden" name="token" value="{{ $token }}">

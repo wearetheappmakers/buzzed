@@ -7,7 +7,7 @@
 <head>
 	<base href="../../../">
 	<meta charset="utf-8" />
-	<title>Adhik Bachat Mart</title>
+	<title>{{ App\Models\GeneralSetting::where('deleted_at',NULL)->value('site_name') }}</title>
 	<meta name="description" content="Login page example">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -32,7 +32,13 @@
 	<script src="{{ asset('/assets/js/scripts.bundle.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('/assets/js/pages/custom/login/login-general.js') }}" type="text/javascript"></script>
 	<!--end::Layout Skins -->
-	<link rel="shortcut icon" href="{{asset('assets/media/logos/shopping_logo.png')}}" />
+	@php $logo = App\Models\GeneralSetting::where('deleted_at',NULL)->value('logo'); @endphp
+
+	@if(!empty($logo))
+		<link rel="shortcut icon" href="{{asset('/storage/uploads/brand/'.$logo)}}" />
+	@else
+		<link rel="shortcut icon" href="{{asset('assets/media/logos/buzzed_logo.png')}}" />
+	@endif
 </head>
 
 <!-- end::Head -->
@@ -47,9 +53,13 @@
 				<div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
 					<div class="kt-login__container">
 						<div class="kt-login__logo">
-							<a href="javascript;">
-								<img src="{{ asset('/assets/media/logos/shopping_logo.png') }}" style="height: 150px; width: 150px;">
-							</a>
+							@php $logo = App\Models\GeneralSetting::where('deleted_at',NULL)->value('logo'); @endphp
+
+							@if(!empty($logo))
+								<img alt="Logo" src="{{asset('/storage/uploads/brand/'.$logo)}}" style="height: 80px; width: 100px;" />
+							@else
+								<img alt="Logo" src="{{asset('assets/media/logos/buzzed_logo.png')}}" style="height: 80px; width: 100px;" />
+							@endif
 						</div>
 						@yield('content')
 						

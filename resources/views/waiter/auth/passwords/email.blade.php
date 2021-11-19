@@ -1,4 +1,4 @@
-@extends('vendor.layout.auth')
+@extends('waiter.layout.auth')
 
 <!-- Main Content -->
 @section('content')
@@ -13,7 +13,7 @@
             {{ session('status') }}
         </div>
     @endif
-    <form class="kt-form" method="POST" role="form" action="{{ url('/vendor/password/email') }}">
+    <form class="kt-form" method="POST" role="form" action="{{ url('/waiter/password/email') }}">
         {{ csrf_field() }}
         <div class="input-group{{ $errors->has('email') ? ' has-error' : '' }}">
             <input class="form-control" type="email" placeholder="Email" value="{{ old('email') }}" name="email" id="kt_email">
@@ -25,7 +25,7 @@
         </div>
         <div class="kt-login__actions">
             <button type="submit" class="btn btn-brand btn-elevate kt-login__btn-primary">Request</button>&nbsp;&nbsp;
-        <button class="btn btn-light btn-elevate kt-login__btn-secondary"><a href="{{url('vendor/login')}}">Cancel</a></button>
+        <button class="btn btn-light btn-elevate kt-login__btn-secondary"><a href="{{url('waiter/login')}}">Cancel</a></button>
         </div>
     </form>
 </div>

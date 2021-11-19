@@ -7,7 +7,7 @@
 <head>
 	<base href="../../../">
 	<meta charset="utf-8" />
-	<title>{{ App\Models\GeneralSetting::where('deleted_at',NULL)->value('site_name') }}</title>
+	<title><?php echo e(App\Models\GeneralSetting::where('deleted_at',NULL)->value('site_name')); ?></title>
 	<meta name="description" content="Login page example">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,28 +17,28 @@
 	<!--end::Fonts -->
 
 	<!--begin::Page Custom Styles(used by this page) -->
-	<link href="{{ asset('/assets/css/pages/login/login-3.css') }}" rel="stylesheet" type="text/css" />
+	<link href="<?php echo e(asset('/assets/css/pages/login/login-3.css')); ?>" rel="stylesheet" type="text/css" />
 
 	<!--end::Page Custom Styles -->
 
 	<!--begin::Global Theme Styles(used by all pages) -->
-	<link href="{{ asset('/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{ asset('/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+	<link href="<?php echo e(asset('/assets/plugins/global/plugins.bundle.css')); ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo e(asset('/assets/css/style.bundle.css')); ?>" rel="stylesheet" type="text/css" />
 
 	<!--end::Global Theme Styles -->
 
 	<!--begin::Layout Skins(used by all pages) -->
-	<script src="{{ asset('/assets/plugins/global/plugins.bundle.js') }}" type="text/javascript"></script>
-	<script src="{{ asset('/assets/js/scripts.bundle.js') }}" type="text/javascript"></script>
-	<script src="{{ asset('/assets/js/pages/custom/login/login-general.js') }}" type="text/javascript"></script>
+	<script src="<?php echo e(asset('/assets/plugins/global/plugins.bundle.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo e(asset('/assets/js/scripts.bundle.js')); ?>" type="text/javascript"></script>
+	<script src="<?php echo e(asset('/assets/js/pages/custom/login/login-general.js')); ?>" type="text/javascript"></script>
 	<!--end::Layout Skins -->
-	@php $logo = App\Models\GeneralSetting::where('deleted_at',NULL)->value('logo'); @endphp
+	<?php $logo = App\Models\GeneralSetting::where('deleted_at',NULL)->value('logo'); ?>
 
-	@if(!empty($logo))
-		<link rel="shortcut icon" href="{{asset('/storage/uploads/brand/'.$logo)}}" />
-	@else
-		<link rel="shortcut icon" href="{{asset('assets/media/logos/buzzed_logo.png')}}" />
-	@endif
+	<?php if(!empty($logo)): ?>
+		<link rel="shortcut icon" href="<?php echo e(asset('/storage/uploads/brand/'.$logo)); ?>" />
+	<?php else: ?>
+		<link rel="shortcut icon" href="<?php echo e(asset('assets/media/logos/buzzed_logo.png')); ?>" />
+	<?php endif; ?>
 </head>
 
 <!-- end::Head -->
@@ -53,15 +53,15 @@
 				<div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
 					<div class="kt-login__container">
 						<div class="kt-login__logo">
-							@php $logo = App\Models\GeneralSetting::where('deleted_at',NULL)->value('logo'); @endphp
+							<?php $logo = App\Models\GeneralSetting::where('deleted_at',NULL)->value('logo'); ?>
 
-							@if(!empty($logo))
-								<img alt="Logo" src="{{asset('/storage/uploads/brand/'.$logo)}}" style="height: 80px; width: 100px;" />
-							@else
-								<img alt="Logo" src="{{asset('assets/media/logos/buzzed_logo.png')}}" style="height: 80px; width: 100px;" />
-							@endif
+							<?php if(!empty($logo)): ?>
+								<img alt="Logo" src="<?php echo e(asset('/storage/uploads/brand/'.$logo)); ?>" style="height: 80px; width: 100px;" />
+							<?php else: ?>
+								<img alt="Logo" src="<?php echo e(asset('assets/media/logos/buzzed_logo.png')); ?>" style="height: 80px; width: 100px;" />
+							<?php endif; ?>
 						</div>
-						@yield('content')
+						<?php echo $__env->yieldContent('content'); ?>
 						
 					</div>
 				</div>
@@ -106,7 +106,7 @@
 
 // 					$.ajax({
 // 						type: "POST",
-// 						url: "{{ route('login') }}",
+// 						url: "<?php echo e(route('login')); ?>",
 
 // 						data: {
 
@@ -145,3 +145,4 @@
 <!-- end::Body -->
 </html>
 
+<?php /**PATH D:\rohit\buzzed\buzzed\resources\views/manager/layout/auth.blade.php ENDPATH**/ ?>
