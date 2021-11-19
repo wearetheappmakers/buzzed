@@ -57,7 +57,14 @@
 
 						<div class="kt-portlet__head-actions">
 
-							<a href="<?php echo e(route('admin.order.index')); ?>" class="btn btn-brand btn-elevate btn-icon-sm" id="printPageButton1">Back</a>
+							<?php if(Auth::guard('waiter')->check()): ?>
+								<a href="<?php echo e(route('waiter.order.index')); ?>" class="btn btn-brand btn-elevate btn-icon-sm" id="printPageButton1">Back</a>
+							<?php endif; ?>
+
+							<?php if(Auth::guard('admin')->check()): ?>
+								<a href="<?php echo e(route('admin.order.index')); ?>" class="btn btn-brand btn-elevate btn-icon-sm" id="printPageButton1">Back</a>
+							<?php endif; ?>
+							
 
 						</div>
 

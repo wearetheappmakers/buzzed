@@ -59,6 +59,20 @@
                 <button class="btn btn-success btn-sm btn-bold btn-font-md" type="submit"  style="color: white;">Logout</button>   
             </form>
             <?php endif; ?>
+
+            <?php if(Auth::guard('waiter')->check()): ?>
+            <form id="logout-form" action="<?php echo e(url('waiter/logout')); ?>" method="POST" >
+                            <?php echo csrf_field(); ?>
+                <button class="btn btn-success btn-sm btn-bold btn-font-md" type="submit"  style="color: white;">Logout</button>   
+            </form>
+            <?php endif; ?>
+
+            <?php if(Auth::guard('manager')->check()): ?>
+            <form id="logout-form" action="<?php echo e(url('manager/logout')); ?>" method="POST" >
+                            <?php echo csrf_field(); ?>
+                <button class="btn btn-success btn-sm btn-bold btn-font-md" type="submit"  style="color: white;">Logout</button>   
+            </form>
+            <?php endif; ?>
         
         </div>
 

@@ -12,6 +12,12 @@ $edit = $data['edit'];
             <input type="text" class="form-control" placeholder="Enter contact no" value="{{ $edit->number }}" onkeypress="return isNumber(event)" maxlength="10" name="number" id="number" required autocomplete="off">
         </div>
         <div class="col-lg-4">
+            <label>Email:</label>
+            <input type="text" class="form-control" placeholder="Enter email" value="{{ $edit->email }}" name="email" id="email" required autocomplete="off" required="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-4">
             <label>Gender:</label>
              <select class="form-control" name="gender">
                 <option value="1" @if($edit->gender == 1) selected @endif>Male</option>
@@ -19,8 +25,6 @@ $edit = $data['edit'];
                 <option value="3" @if($edit->gender == 3) selected @endif>Other</option>
             </select>
         </div>
-    </div>
-    <div class="form-group row">
         <div class="col-lg-4">
             <label>Role:</label>
              <select class="form-control" name="role">

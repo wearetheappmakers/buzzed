@@ -90,9 +90,9 @@
                                     <label>Payment Type</label>
                                     <select class="form-control" data-live-search="true" name="payment_type" required="">
                                         <option value="">--select payment type--</option>
-                                        <option value="Cash" @if($edit->gender == 'Cash') selected @endif >Cash</option>
-                                        <option value="Card" @if($edit->gender == 'Card') selected @endif >Card</option>
-                                        <option value="UPI" @if($edit->gender == 'UPI') selected @endif >UPI</option>
+                                        <option value="Cash" @if($edit->payment_type == 'Cash') selected @endif >Cash</option>
+                                        <option value="Card" @if($edit->payment_type == 'Card') selected @endif >Card</option>
+                                        <option value="UPI" @if($edit->payment_type == 'UPI') selected @endif >UPI</option>
                                     </select>
                                 </div>
 
@@ -161,7 +161,7 @@
 
                     type: "POST",
 
-                    url: "{{ route('admin.vendors.update')}}",
+                    url: "{{ $url }}",
 
                     data: new FormData($('.add_form')[0]),
 

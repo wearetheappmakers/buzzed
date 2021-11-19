@@ -18,7 +18,7 @@ class CaptainController extends Controller
     {
         $this->view = 'captain';
         $this->route = 'captain';
-        $this->viewName = 'Steward';
+        $this->viewName = 'Captain';
         $this->model = $s;
     }
     /**
@@ -36,7 +36,15 @@ class CaptainController extends Controller
 			
 			return Datatables::of($query)
 				->addColumn('action', function ($row) {
-					$btn = view('admin.layout.actionbtnpermission')->with(['id' => $row->id, 'route' => 'admin.'.$this->route,'delete' => route('admin.'.$this->route.'.destory')])->render();
+                    if (\Auth::guard('admin')->check()) {
+                          $route = 'admin.'.$this->route;
+                    }
+
+                    if (\Auth::guard('manager')->check()) {
+                         $route = 'manager.'.$this->route;
+                    }
+
+					$btn = view('admin.layout.actionbtnpermission')->with(['id' => $row->id, 'route' => $route,'delete' => route('admin.'.$this->route.'.destory')])->render();
 					return $btn;
 				})
 				->addColumn('checkbox', function ($row) {
@@ -60,6 +68,14 @@ class CaptainController extends Controller
 
         $data['module']= $this->viewName;
 
+        if (\Auth::guard('admin')->check()) {
+             $data['create'] = route('admin.'.$this->route . '.create');
+        }
+
+        if (\Auth::guard('manager')->check()) {
+             $data['create'] = route('manager.'.$this->route . '.create');
+        }
+
         return view('adminseller.'.$this->view . '.index')->with($data);
     }
 
@@ -70,7 +86,14 @@ class CaptainController extends Controller
      */
     public function create()
     {
-        $data['url'] = route('admin.'.$this->route . '.store');
+        if (\Auth::guard('admin')->check()) {
+              $data['url'] = route('admin.'.$this->route . '.store');
+        }
+
+        if (\Auth::guard('manager')->check()) {
+             $data['url'] = route('manager.'.$this->route . '.store');
+        }
+
         $data['title'] = 'Add ' . $this->viewName;
         $data['module'] = $this->viewName;
         $data['resourcePath'] = $this->view;
@@ -124,9 +147,16 @@ class CaptainController extends Controller
      */
     public function edit($id)
     {
+        if (\Auth::guard('admin')->check()) {
+              $data['url'] = route('admin.' . $this->route . '.update', [$this->view => $id]);
+        }
+
+        if (\Auth::guard('manager')->check()) {
+             $data['url'] = route('manager.' . $this->route . '.update', [$this->view => $id]);
+        }
+
         $data['title'] = 'Edit '.$this->viewName;
         $data['edit'] = $this->model->findOrFail($id);
-        $data['url'] = route('admin.' . $this->route . '.update', [$this->view => $id]);
         $data['module'] = $this->viewName;
         $data['resourcePath'] = $this->view;
         $data['outlet'] = Outlet::where('status',1)->get();

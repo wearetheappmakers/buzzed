@@ -89,16 +89,15 @@
                                     <label>Payment Type</label>
                                     <select class="form-control" data-live-search="true" name="payment_type" required="">
                                         <option value="">--select payment type--</option>
-                                        <option value="Cash" <?php if($edit->gender == 'Cash'): ?> selected <?php endif; ?> >Cash</option>
-                                        <option value="Card" <?php if($edit->gender == 'Card'): ?> selected <?php endif; ?> >Card</option>
-                                        <option value="UPI" <?php if($edit->gender == 'UPI'): ?> selected <?php endif; ?> >UPI</option>
+                                        <option value="Cash" <?php if($edit->payment_type == 'Cash'): ?> selected <?php endif; ?> >Cash</option>
+                                        <option value="Card" <?php if($edit->payment_type == 'Card'): ?> selected <?php endif; ?> >Card</option>
+                                        <option value="UPI" <?php if($edit->payment_type == 'UPI'): ?> selected <?php endif; ?> >UPI</option>
                                     </select>
                                 </div>
 
                             </div>
 
                             <div class="form-group row">
-
                                 <div class="col-lg-4">
                                         <label>Status:</label>
                                         <select class="form-control" name="status">
@@ -161,7 +160,7 @@
 
                     type: "POST",
 
-                    url: "<?php echo e(route('admin.vendors.update')); ?>",
+                    url: "<?php echo e($url); ?>",
 
                     data: new FormData($('.add_form')[0]),
 

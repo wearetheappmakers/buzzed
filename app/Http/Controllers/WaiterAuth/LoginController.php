@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\WaiterAuth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Hesto\MultiAuth\Traits\LogsoutGuard;
+use App\Staff;
 
 class LoginController extends Controller
 {
@@ -49,6 +51,24 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         return view('waiter.auth.login');
+    }
+
+    public function login(Request $request){
+         $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $role = Staff::Where('email',$request->email)->value('role');
+
+        if ($role == 2) {
+           if (Auth::guard('waiter')->attempt(['email' => $request->email, 'password' => $request->password ])) {
+            return redirect()->intended('waiter/home')
+                        ->withSuccess('You have Successfully loggedin');
+            } 
+        }
+
+        return redirect("waiter/login")->withSuccess('Oppes! You have entered invalid credentials');
     }
 
     /**

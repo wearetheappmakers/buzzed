@@ -38,7 +38,7 @@
 
 						<div class="kt-portlet__head-actions">
 
-							<a href="<?php echo e(route('admin.'.$resourcePath.'.create')); ?>" class="btn btn-brand btn-elevate btn-icon-sm">
+							<a href="<?php echo e($create); ?>" class="btn btn-brand btn-elevate btn-icon-sm">
 
 								<i class="la la-plus"></i>
 
@@ -99,6 +99,20 @@
 
 <?php $__env->stopSection(); ?>
 
+<?php if(Auth::guard('admin')->check()): ?>
+	<?php 
+		$url = route('admin.vendors.index',$type); 
+		$status = route('admin.vendors.change_status'); 
+	?>
+<?php endif; ?>
+
+<?php if(Auth::guard('manager')->check()): ?>
+	<?php 
+		$url = route('manager.vendors.index',$type);
+		$status = route('manager.vendors.change_status');
+	?>
+<?php endif; ?>
+
 <?php $__env->startPush('scripts'); ?>
 
 
@@ -134,7 +148,7 @@
 	            'csv', 'pdf'
 	        ],
 
-			ajax: "<?php echo e(route('admin.vendors.index',$type)); ?>",
+			ajax: "<?php echo e($url); ?>",
 
 			columns: [
                 
@@ -231,7 +245,7 @@
             });
 
             $.ajax({
-                url: "<?php echo e(route('admin.vendors.change_status')); ?>",
+                url: "<?php echo e($status); ?>",
 
                 data: 'id=' + ids + '&table_name=' + table + '&field=' + field + '&param=' + params,
 

@@ -34,7 +34,16 @@ class VendorController extends Controller
             }
 			return Datatables::of($query)
 				->addColumn('action', function ($row) {
-					$btn = view('admin.layout.actionbtnpermission')->with(['id' => $row->id, 'route' => 'admin.'.$this->route,'delete' => route('admin.'.$this->route.'.destory') ])->render();
+
+                    if (\Auth::guard('admin')->check()) {
+                          $route = 'admin.'.$this->route;
+                    }
+
+                    if (\Auth::guard('manager')->check()) {
+                         $route = 'manager.'.$this->route;
+                    }
+
+					$btn = view('admin.layout.actionbtnpermission')->with(['id' => $row->id, 'route' => $route,'delete' => route('admin.'.$this->route.'.destory') ])->render();
 					return $btn;
 				})
 				->addColumn('singlecheckbox', function ($row) {
@@ -47,16 +56,36 @@ class VendorController extends Controller
 		$data['title'] = 'Add ' . $this->viewName;
         $data['module'] = $this->viewName;
         $data['resourcePath'] = $this->view;
+
+        if (\Auth::guard('admin')->check()) {
+             $data['create'] = route('admin.'.$this->route . '.create');
+        }
+
+        if (\Auth::guard('manager')->check()) {
+             $data['create'] = route('manager.'.$this->route . '.create');
+        }
+
         return view('adminseller.vendors.index')->with($data);
     }
 
     public function create()
     {
-        $data['url'] = route('admin.' . $this->route . '.store');
+        
+
+        if (\Auth::guard('admin')->check()) {
+             $data['url'] = route('admin.' . $this->route . '.store');
+             $data['index'] = route('admin.' . $this->route . '.index','all');
+        }
+
+        if (\Auth::guard('manager')->check()) {
+             $data['url'] = route('manager.' . $this->route . '.store');
+             $data['index'] = route('manager.' . $this->route . '.index','all');
+        }
+
         $data['title'] = 'Add ' . $this->viewName;
         $data['module'] = $this->viewName;
         $data['resourcePath'] = $this->view;
-        $data['index'] = route('admin.' . $this->route . '.index','all');
+        
 
         return view('adminseller.vendors.create')->with($data);
     }
@@ -87,12 +116,20 @@ class VendorController extends Controller
 
     public function edit(Request $request,$id)
     {
+        if (\Auth::guard('admin')->check()) {
+            $data['url'] = route('admin.' . $this->route . '.update');
+            $data['index'] = route('admin.' . $this->route . '.index','all');
+        }
+
+        if (\Auth::guard('manager')->check()) {
+            $data['url'] = route('manager.' . $this->route . '.update');
+            $data['index'] = route('manager.' . $this->route . '.index','all');
+        }
+
     	$data['title'] = 'Edit '.$this->viewName;
         $data['edit'] = User::findOrFail($id);
-        $data['url'] = route('admin.' . $this->route . '.update', [$this->view => $id]);
         $data['module'] = $this->viewName;
         $data['resourcePath'] = $this->view;
-        $data['index'] = route('admin.' . $this->route . '.index','all');
         $data['membership'] = Membership::where('customer_id',$id)->latest()->first();
 
 		return view('adminseller.vendors.edit')->with($data);

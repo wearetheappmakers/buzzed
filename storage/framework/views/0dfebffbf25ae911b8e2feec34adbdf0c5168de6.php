@@ -63,6 +63,24 @@
 
 <?php $__env->startPush('scripts'); ?>
 
+<?php if(Auth::guard('waiter')->check()): ?>
+    <?php 
+        $status = route('waiter.change-multiple-status');
+    ?>
+<?php endif; ?>
+
+<?php if(Auth::guard('manager')->check()): ?>
+    <?php 
+        $status = route('manager.change-multiple-status');
+    ?>
+<?php endif; ?>
+
+<?php if(Auth::guard('admin')->check()): ?>
+    <?php 
+        $status = route('admin.home.change-multiple-status');
+    ?>
+<?php endif; ?>
+
 <?php if(isset($is_orderby) && $is_orderby == 'yes'): ?>
 
 <?php if(Auth::guard('vendor')->check()): ?>
@@ -371,7 +389,7 @@
 
             type: 'GET',
 
-            url: "<?php echo e(route('admin.home.change-multiple-status')); ?>",
+            url: "<?php echo e($status); ?>",
 
             data: 'id=' + ids + '&table_name=' + table + '&field=' + field + '&param=' + params,
 

@@ -1,8 +1,6 @@
-@extends('admin.main')
+<?php $__env->startSection('content'); ?>
 
-@section('content')
-
-<link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
+<link href="<?php echo e(asset('assets/plugins/custom/datatables/datatables.bundle.css')); ?>" rel="stylesheet" type="text/css" />
 
 
 
@@ -28,7 +26,8 @@
 
 					<h3 class="kt-portlet__head-title">
 
-						{{ $module }}
+						<?php echo e($module); ?>
+
 
 					</h3>
 
@@ -40,11 +39,12 @@
 
 						<div class="kt-portlet__head-actions">
 
-							<a href="{{ $create }}" class="btn btn-brand btn-elevate btn-icon-sm">
+							<a href="<?php echo e($create); ?>" class="btn btn-brand btn-elevate btn-icon-sm">
 
 								<i class="la la-plus"></i>
 
-								Add {{ $module }}
+								Add <?php echo e($module); ?>
+
 
 							</a>
 
@@ -62,7 +62,7 @@
 
 					<table class="table table-striped- table-bordered table-hover table-checkable datatable" id="datatable_rows">
 
-						@csrf
+						<?php echo csrf_field(); ?>
 
 						<thead>
 
@@ -96,7 +96,7 @@
 
 
 
-			@include('admin.layout.multiple_action', array(
+			<?php echo $__env->make('admin.layout.multiple_action', array(
 
 			'table_name' => 'captain',
 
@@ -106,7 +106,7 @@
 
 			'action' => array('change-status-1' => __('Active'), 'change-status-0' => __('Inactive'), 'delete' => __('Delete'))
 
-			))
+			), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
 
@@ -116,21 +116,21 @@
 
 </div>
 
-@stop
+<?php $__env->stopSection(); ?>
 
-@if(Auth::guard('admin')->check())
-	@php $url = route('admin.captain.index'); @endphp
-@endif
+<?php if(Auth::guard('admin')->check()): ?>
+	<?php $url = route('admin.captain.index'); ?>
+<?php endif; ?>
 
-@if(Auth::guard('manager')->check())
-	@php $url = route('manager.captain.index'); @endphp
-@endif
+<?php if(Auth::guard('manager')->check()): ?>
+	<?php $url = route('manager.captain.index'); ?>
+<?php endif; ?>
 
-@push('scripts')
+<?php $__env->startPush('scripts'); ?>
 
 
 
-<script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js')}}" type="text/javascript"></script>
+<script src="<?php echo e(asset('assets/plugins/custom/datatables/datatables.bundle.js')); ?>" type="text/javascript"></script>
 
 
 
@@ -156,7 +156,7 @@
 
 			}],
 
-			ajax: "{{ $url }}",
+			ajax: "<?php echo e($url); ?>",
 
 			columns: [{
 
@@ -216,4 +216,5 @@
 	});
 </script>
 
-@endpush
+<?php $__env->stopPush(); ?>
+<?php echo $__env->make('admin.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/adminseller/captain/index.blade.php ENDPATH**/ ?>

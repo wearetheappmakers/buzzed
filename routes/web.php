@@ -77,6 +77,26 @@ Route::group(['prefix' => 'manager'], function () {
     return view('manager.home');
   })->name('home');
 
+  Route::group(['prefix' => 'captain'], function () {
+    Route::get('/', 'AdminSeller\CaptainController@index')->name('manager.captain.index');
+    Route::get('/create', 'AdminSeller\CaptainController@create')->name('manager.captain.create');
+    Route::post('/store', 'AdminSeller\CaptainController@store')->name('manager.captain.store');
+    Route::get('/{captain}/edit', 'AdminSeller\CaptainController@edit')->name('manager.captain.edit');
+    Route::put('/{captain}', 'AdminSeller\CaptainController@update')->name('manager.captain.update');
+  });
+
+  Route::group(['prefix' => 'customer'], function () {
+    Route::any('/{type}', 'AdminSeller\VendorController@index')->name('manager.vendors.index');
+    Route::any('/create/form', 'AdminSeller\VendorController@create')->name('manager.vendors.create');
+    Route::post('/store/form', 'AdminSeller\VendorController@store')->name('manager.vendors.store');
+    Route::get('/edit/{id}/edit', 'AdminSeller\VendorController@edit')->name('manager.vendors.edit');
+    Route::post('/update/form', 'AdminSeller\VendorController@update')->name('manager.vendors.update');
+    Route::post('/destory/record', 'AdminSeller\VendorController@destory')->name('manager.vendors.destory');
+    Route::any('/change/status', 'AdminSeller\VendorController@change_status')->name('manager.vendors.change_status');
+  });
+
+  Route::get('/change-multiple-status', 'AdminSeller\HomeController@changeMultipleStatus')->name('manager.change-multiple-status');
+
 });
 
 Route::group(['prefix' => 'waiter'], function () {
@@ -95,6 +115,11 @@ Route::group(['prefix' => 'waiter'], function () {
   Route::get('/home', function () {
     return view('waiter.home');
   })->name('home');
+
+  Route::any('/get-order-list/', 'AdminSeller\OrderController@index')->name('waiter.order.index');
+  Route::any('/order-detail/{order_header_id}', 'AdminSeller\OrderController@detail')->name('waiter.order.detail');
+  Route::post('/addorder/','AdminSeller\OrderController@addorder')->name('waiter.order.add');
+  Route::get('/change-multiple-status', 'AdminSeller\HomeController@changeMultipleStatus')->name('waiter.change-multiple-status');
 
 });
 

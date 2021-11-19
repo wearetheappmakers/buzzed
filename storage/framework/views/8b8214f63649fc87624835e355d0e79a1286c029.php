@@ -49,14 +49,19 @@
 	</div>
 </div>
 
-<?php
-if($status_id != '')  {
-    $datatable_url = route('admin.order.status.index', $status_id);
-} else {
-    $datatable_url = route('admin.order.index');
-}
-?>
+<?php if(Auth::guard('admin')->check()): ?>
+	<?php
+		if($status_id != '')  {
+		    $datatable_url = route('admin.order.status.index', $status_id);
+		} else {
+		    $datatable_url = route('admin.order.index');
+		}
+	?>
+<?php endif; ?>
 
+<?php if(Auth::guard('waiter')->check()): ?>
+	<?php $datatable_url = route('waiter.order.index'); ?>
+<?php endif; ?>
 
 <?php $__env->stopSection(); ?>
 

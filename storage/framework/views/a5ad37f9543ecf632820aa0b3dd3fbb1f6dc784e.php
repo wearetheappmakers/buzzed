@@ -1,14 +1,12 @@
-@extends('admin.main')
+<?php $__env->startSection('content'); ?>
 
-@section('content')
-
-@php
+<?php
 $title = $data['title'];
 $module = $data['module'];
 $resourcePath = $data['resourcePath'];
 $url = $data['url'];
 $id = $data['edit']->id;
-@endphp
+?>
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
     <br>
@@ -27,15 +25,16 @@ $id = $data['edit']->id;
 
                             <h3 class="kt-portlet__head-title">
 
-                                 {{ $title }}
+                                 <?php echo e($title); ?>
+
 
                             </h3>
 
                         </div>
 
                     </div>
-                    @if(Auth::guard('admin')->check())
-                    @php
+                    <?php if(Auth::guard('admin')->check()): ?>
+                    <?php
                         $edit = route('admin.'.$resourcePath.'.update', array($resourcePath=>$id));
                         if(isset($data['type'])){
                             $index= route('admin.'.$resourcePath.'.index',array('type'=>$data['type']));
@@ -44,22 +43,22 @@ $id = $data['edit']->id;
                         }
                         // echo $index;
                         // exit;
-                        @endphp
-                    @endif
+                        ?>
+                    <?php endif; ?>
 
-                    @if(Auth::guard('manager')->check())
-                            @php
+                    <?php if(Auth::guard('manager')->check()): ?>
+                            <?php
                                 $index= route('manager.'.$resourcePath.'.index');
                                $edit = route('manager.'.$resourcePath.'.update', array($resourcePath=>$id));
-                            @endphp
-                        @endif
+                            ?>
+                        <?php endif; ?>
 
-                    <form class="kt-form kt-form--label-right edit_form" method="put" action="{{$url}}">
+                    <form class="kt-form kt-form--label-right edit_form" method="put" action="<?php echo e($url); ?>">
 
-                        @csrf
-                        @method('PUT')
+                        <?php echo csrf_field(); ?>
+                        <?php echo method_field('PUT'); ?>
                         
-                        @include('adminseller.'.$resourcePath.'.edit', array('data' => $data))
+                        <?php echo $__env->make('adminseller.'.$resourcePath.'.edit', array('data' => $data), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                         <div class="kt-portlet__foot">
 
@@ -73,7 +72,7 @@ $id = $data['edit']->id;
 
                                         <button type="button" class="btn btn-primary update change_button">Update<i class="la la-spinner change_spin d-none"></i></button>
 
-                                        <a href="{{ $index }}"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                                        <a href="<?php echo e($index); ?>"><button type="button" class="btn btn-secondary">Cancel</button></a>
 
                                     </div>
 
@@ -113,15 +112,15 @@ $id = $data['edit']->id;
 					  headers: {
         'X-CSSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       },
-					url: "{{ $edit }}", 
+					url: "<?php echo e($edit); ?>", 
 					data: new FormData($('.edit_form')[0]),
 					processData: false,
 					contentType: false,
 					success: function (data)
 					{
 						if (data.status === 'success') {
-							window.location = "{{ $index }}";
-							toastr["success"]("{{$module}} Updated Successfully", "Success");
+							window.location = "<?php echo e($index); ?>";
+							toastr["success"]("<?php echo e($module); ?> Updated Successfully", "Success");
 						} else if (data.status === 'error') {
 							location.reload();
 							toastr["error"]("Something went wrong", "Error");
@@ -158,4 +157,5 @@ $id = $data['edit']->id;
 
 </script>
 
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/admin/general/edit_form.blade.php ENDPATH**/ ?>

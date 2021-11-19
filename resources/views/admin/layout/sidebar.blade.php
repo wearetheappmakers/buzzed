@@ -58,6 +58,20 @@
                 <button class="btn btn-success btn-sm btn-bold btn-font-md" type="submit"  style="color: white;">Logout</button>   
             </form>
             @endif
+
+            @if(Auth::guard('waiter')->check())
+            <form id="logout-form" action="{{  url('waiter/logout') }}" method="POST" >
+                            @csrf
+                <button class="btn btn-success btn-sm btn-bold btn-font-md" type="submit"  style="color: white;">Logout</button>   
+            </form>
+            @endif
+
+            @if(Auth::guard('manager')->check())
+            <form id="logout-form" action="{{  url('manager/logout') }}" method="POST" >
+                            @csrf
+                <button class="btn btn-success btn-sm btn-bold btn-font-md" type="submit"  style="color: white;">Logout</button>   
+            </form>
+            @endif
         
         </div>
 

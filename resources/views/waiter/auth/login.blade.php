@@ -1,11 +1,11 @@
 @extends('admin.layout.auth')
 
 @section('content')
-<form class="kt-form login_form" id="login_form"  role="form" method="POST" action="{{ url('/vendor/login') }}">
+<form class="kt-form login_form" id="login_form"  role="form" method="POST" action="{{ url('/waiter/login') }}">
                         {{ csrf_field() }}
                         	<div class="kt-login__signin">
 								<div class="kt-login__head">
-									<h3 class="kt-login__title">Sign In To Vendor</h3>
+									<h3 class="kt-login__title">Sign In To Waiter</h3>
 								</div>
 								</div>
 
@@ -37,7 +37,7 @@
 										</label>
 									</div>
 									<div class="col kt-align-right">
-										<a href="{{ url('/vendor/password/reset') }}" class="kt-login__link">Forget Password ?</a>
+										<a href="{{ url('/waiter/password/reset') }}" class="kt-login__link">Forget Password ?</a>
 									</div>
 								</div>
 								<div class="kt-login__actions">

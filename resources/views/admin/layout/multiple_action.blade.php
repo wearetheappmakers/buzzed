@@ -63,6 +63,24 @@
 
 @push('scripts')
 
+@if(Auth::guard('waiter')->check())
+    @php 
+        $status = route('waiter.change-multiple-status');
+    @endphp
+@endif
+
+@if(Auth::guard('manager')->check())
+    @php 
+        $status = route('manager.change-multiple-status');
+    @endphp
+@endif
+
+@if(Auth::guard('admin')->check())
+    @php 
+        $status = route('admin.home.change-multiple-status');
+    @endphp
+@endif
+
 @if(isset($is_orderby) && $is_orderby == 'yes')
 
 @if(Auth::guard('vendor')->check())
@@ -371,7 +389,7 @@
 
             type: 'GET',
 
-            url: "{{route('admin.home.change-multiple-status')}}",
+            url: "{{ $status }}",
 
             data: 'id=' + ids + '&table_name=' + table + '&field=' + field + '&param=' + params,
 

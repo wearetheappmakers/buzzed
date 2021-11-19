@@ -114,7 +114,13 @@ class OrderController extends Controller
                     return $html;
                 })
                 ->addColumn('action', function ($row) {
-                    $action = '<a style="background: green;" href="'.route('admin.order.detail', $row->id).'" title="View details" class="btn btn-sm btn-clean btn-icon btn-icon-md">
+                    if (\Auth::guard('waiter')->check()) {
+                        $route = route('waiter.order.detail', $row->id);
+                    }
+                    if (\Auth::guard('admin')->check()) {
+                        $route = route('admin.order.detail', $row->id);
+                    }
+                    $action = '<a style="background: green;" href="'.$route.'" title="View details" class="btn btn-sm btn-clean btn-icon btn-icon-md">
                                     <i style="color: white;" class="la la-eye"></i>
                             </a>';
                     return $action;

@@ -1,3 +1,4 @@
+
 @extends('admin.main')
 
 @section('content')
@@ -40,7 +41,7 @@
 
 						<div class="kt-portlet__head-actions">
 
-							<a href="{{ route('admin.'.$resourcePath.'.create') }}" class="btn btn-brand btn-elevate btn-icon-sm">
+							<a href="{{ $create }}" class="btn btn-brand btn-elevate btn-icon-sm">
 
 								<i class="la la-plus"></i>
 
@@ -101,6 +102,20 @@
 
 @stop
 
+@if(Auth::guard('admin')->check())
+	@php 
+		$url = route('admin.vendors.index',$type); 
+		$status = route('admin.vendors.change_status'); 
+	@endphp
+@endif
+
+@if(Auth::guard('manager')->check())
+	@php 
+		$url = route('manager.vendors.index',$type);
+		$status = route('manager.vendors.change_status');
+	@endphp
+@endif
+
 @push('scripts')
 
 
@@ -136,7 +151,7 @@
 	            'csv', 'pdf'
 	        ],
 
-			ajax: "{{ route('admin.vendors.index',$type) }}",
+			ajax: "{{ $url }}",
 
 			columns: [
                 
@@ -233,7 +248,7 @@
             });
 
             $.ajax({
-                url: "{{route('admin.vendors.change_status')}}",
+                url: "{{ $status }}",
 
                 data: 'id=' + ids + '&table_name=' + table + '&field=' + field + '&param=' + params,
 

@@ -171,10 +171,18 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
 
 						<ul class="kt-menu__nav ">
-							@if(Auth::guard('vendor')->check())
-								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('vendor.product')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-box"></i><span class="kt-menu__link-text">Product</span></a></li>
 
-								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('vendor.revenue.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-percent"></i><span class="kt-menu__link-text">Commision Report</span></a></li>
+							@if(Auth::guard('manager')->check())
+							
+								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('manager.captain.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Captain</span></a></li>
+
+								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('manager.vendors.index','all')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Customer</span></a></li>
+
+							@endif
+
+							@if(Auth::guard('waiter')->check())
+							
+								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('waiter.order.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">All Bills</span></a></li>
 
 							@endif
 

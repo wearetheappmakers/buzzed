@@ -147,6 +147,14 @@
 
 </div>
 
+@if(Auth::guard('admin')->check())
+    @php $url = route('admin.vendors.store'); @endphp
+@endif
+
+@if(Auth::guard('manager')->check())
+    @php $url = route('manager.vendors.store'); @endphp
+@endif
+
 <script>
 
     $(document).ready(function() {
@@ -164,7 +172,7 @@
 
                     type: "POST",
 
-                    url: "{{ route('admin.vendors.store')}}",
+                    url: "{{ $url }}",
 
                     data: new FormData($('.add_form')[0]),
 

@@ -1,6 +1,4 @@
-@extends('admin.main')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <style type="text/css">
 	.mandatory{
@@ -33,13 +31,13 @@
 		</div>
 	</div>
 
-	@php 
+	<?php 
 	$customers = App\User::where('status',1)->get();
 	$captains = App\Models\Captain::where('status',1)->get();
 	$sources = App\Models\Discount::where('status',1)->get();
 	$sources1 = App\Models\Discount::select('discount_per')->where([['status',1],['id',2]])->first();
 	$sources2 = App\Models\Discount::select('discount_per')->where([['status',1],['id',3]])->first();
-@endphp
+?>
 
 <div class="modal fade" id="kt_modal_4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
@@ -51,20 +49,20 @@
 			</div>
 			<div class="modal-body">
 				 <form class="kt-form kt-form--label-right add_form" method="post" >
-                    @csrf
+                    <?php echo csrf_field(); ?>
 
                     <div class="form-group row">
                     	<div class="col-lg-6">
 							<label for="recipient-name" class="form-control-label">Select Captain: <span class="mandatory">*</span></label>
 							<select class="form-control kt-selectpicker captain" data-live-search="true" name="captain_id" required="">
 								<option value="" disabled="">--select captain--</option>
-								@if(!empty($captains))
-									@foreach($captains as $captain)
-										<option value="{{ $captain->id }}">{{ $captain->number }} ( {{ $captain->name }} )</option>
-									@endforeach
-								@else
+								<?php if(!empty($captains)): ?>
+									<?php $__currentLoopData = $captains; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $captain): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<option value="<?php echo e($captain->id); ?>"><?php echo e($captain->number); ?> ( <?php echo e($captain->name); ?> )</option>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								<?php else: ?>
 									<option value="">No customer found</option>
-								@endif
+								<?php endif; ?>
 							</select>
 						</div>
                     	<div class="col-lg-6">
@@ -77,13 +75,13 @@
 							<label for="recipient-name" class="form-control-label">Select Customer:<span class="mandatory">*</span></label>
 							<select class="form-control kt-selectpicker customer" data-live-search="true" name="customer_id" required="">
 								<option value="" disabled="">--select customer--</option>
-								@if(!empty($customers))
-									@foreach($customers as $customer)
-										<option value="{{ $customer->id }}">{{ $customer->number }} ( {{ $customer->fname }} )</option>
-									@endforeach
-								@else
+								<?php if(!empty($customers)): ?>
+									<?php $__currentLoopData = $customers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $customer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<option value="<?php echo e($customer->id); ?>"><?php echo e($customer->number); ?> ( <?php echo e($customer->fname); ?> )</option>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								<?php else: ?>
 									<option value="">No customer found</option>
-								@endif
+								<?php endif; ?>
 							</select>
 						</div>
 						<div class="col-lg-6">
@@ -91,13 +89,13 @@
 							<input type="hidden" name="discount_per" id="discount_per_hid">
 							<select class="form-control" id="discount_per" required="" disabled>
 								<option value="">--discount--</option>
-								@if(!empty($sources))
-									@foreach($sources as $source)
-										<option value="{{ $source->id }}">{{ $source->source_name }} ( {{ $source->discount_per }} %)</option>
-									@endforeach
-								@else
+								<?php if(!empty($sources)): ?>
+									<?php $__currentLoopData = $sources; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $source): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<option value="<?php echo e($source->id); ?>"><?php echo e($source->source_name); ?> ( <?php echo e($source->discount_per); ?> %)</option>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								<?php else: ?>
 									<option value="">No source found</option>
-								@endif
+								<?php endif; ?>
 							</select>
 						</div>
 						
@@ -164,7 +162,7 @@
 
                     type: "POST",
 
-                    url: "{{ route('waiter.order.add')}}",
+                    url: "<?php echo e(route('waiter.order.add')); ?>",
 
                     data: new FormData($('.add_form')[0]),
 
@@ -296,4 +294,5 @@
 	
 </script>
 
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/waiter/home.blade.php ENDPATH**/ ?>

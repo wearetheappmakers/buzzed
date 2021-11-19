@@ -1,6 +1,4 @@
-@extends('admin.main')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
@@ -21,7 +19,8 @@
 
                             <h3 class="kt-portlet__head-title">
 
-                                 {{ $title }}
+                                 <?php echo e($title); ?>
+
 
                             </h3>
 
@@ -29,12 +28,12 @@
 
                     </div>
 
-                    <form class="kt-form kt-form--label-right add_form" method="post" action="{{$url}}">
+                    <form class="kt-form kt-form--label-right add_form" method="post" action="<?php echo e($url); ?>">
 
-                        @csrf
+                        <?php echo csrf_field(); ?>
 
-                        @if(Auth::guard('admin')->check())
-                            @php
+                        <?php if(Auth::guard('admin')->check()): ?>
+                            <?php
                                 if(isset($type)){
                                     $index= route('admin.'.$resourcePath.'.index',array('type'=>$type));
                                     $store=route('admin.'.$resourcePath.'.store',array('type'=>$type));
@@ -42,17 +41,17 @@
                                     $index= route('admin.'.$resourcePath.'.index');
                                     $store=route('admin.'.$resourcePath.'.store');
                                 }
-                            @endphp
-                        @endif
+                            ?>
+                        <?php endif; ?>
 
-                        @if(Auth::guard('manager')->check())
-                            @php
+                        <?php if(Auth::guard('manager')->check()): ?>
+                            <?php
                                 $index= route('manager.'.$resourcePath.'.index');
                                 $store=route('manager.'.$resourcePath.'.store');
-                            @endphp
-                        @endif
+                            ?>
+                        <?php endif; ?>
                         
-                        @include('adminseller.'.$resourcePath.'.create')
+                        <?php echo $__env->make('adminseller.'.$resourcePath.'.create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                         <div class="kt-portlet__foot">
 
@@ -66,7 +65,7 @@
 
                                         <button type="button" class="btn btn-primary submit change_button">Submit<i class="la la-spinner change_spin d-none"></i></button>
 
-                                        <a href="{{ $index }}"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                                        <a href="<?php echo e($index); ?>"><button type="button" class="btn btn-secondary">Cancel</button></a>
 
                                     </div>
 
@@ -107,7 +106,7 @@
 
                     type: "POST",
 
-                    url: "{{$store}}",
+                    url: "<?php echo e($store); ?>",
 
                     data: new FormData($('.add_form')[0]),
 
@@ -119,9 +118,9 @@
 
                         if (data.status === 'success') {
                         	console.log('done');
-                            window.location = "{{ $index }}";
+                            window.location = "<?php echo e($index); ?>";
 
-                            toastr["success"]("{{ $module }} Added Successfully", "Success");
+                            toastr["success"]("<?php echo e($module); ?> Added Successfully", "Success");
 
                             
 
@@ -171,4 +170,5 @@
 
 </script>
 
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/admin/general/add_form.blade.php ENDPATH**/ ?>

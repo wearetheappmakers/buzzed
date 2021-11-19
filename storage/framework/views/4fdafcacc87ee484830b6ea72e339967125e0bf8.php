@@ -1,5 +1,11 @@
 <?php $__env->startSection('content'); ?>
 
+<style type="text/css">
+	.mandatory{
+		color: red;
+	}
+</style>
+
 <!-- <?php
 $waiting_order = DB::table('order_headers')->where('order_status_id',1)->count();
 $preparing_order = DB::table('order_headers')->where('order_status_id',2)->count();
@@ -325,7 +331,7 @@ $count_total = $count_cod_order + $count_online_order;
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel">Add Bill</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"  onclick="return window.location.reload();">
 				</button>
 			</div>
 			<div class="modal-body">
@@ -334,9 +340,9 @@ $count_total = $count_cod_order + $count_online_order;
 
                     <div class="form-group row">
                     	<div class="col-lg-6">
-							<label for="recipient-name" class="form-control-label">Select Captain:</label>
+							<label for="recipient-name" class="form-control-label">Select Captain: <span class="mandatory">*</span></label>
 							<select class="form-control kt-selectpicker captain" data-live-search="true" name="captain_id" required="">
-								<option value="">--select captain--</option>
+								<option value="" disabled="">--select captain--</option>
 								<?php if(!empty($captains)): ?>
 									<?php $__currentLoopData = $captains; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $captain): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<option value="<?php echo e($captain->id); ?>"><?php echo e($captain->number); ?> ( <?php echo e($captain->name); ?> )</option>
@@ -347,15 +353,15 @@ $count_total = $count_cod_order + $count_online_order;
 							</select>
 						</div>
                     	<div class="col-lg-6">
-							<label for="recipient-name" class="form-control-label">Total Amount:</label>
-							<input type="text" class="form-control" name="price" id="price" required="" onkeyup="if(/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+							<label for="recipient-name" class="form-control-label">Total Amount:<span class="mandatory">*</span></label>
+							<input type="text" class="form-control total_amount" name="price" id="price" required="" onkeyup="if(/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
 						</div>
                     </div>
 					<div class="form-group row">
 						<div class="col-lg-6">
-							<label for="recipient-name" class="form-control-label">Select Customer:</label>
+							<label for="recipient-name" class="form-control-label">Select Customer:<span class="mandatory">*</span></label>
 							<select class="form-control kt-selectpicker customer" data-live-search="true" name="customer_id" required="">
-								<option value="">--select customer--</option>
+								<option value="" disabled="">--select customer--</option>
 								<?php if(!empty($customers)): ?>
 									<?php $__currentLoopData = $customers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $customer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<option value="<?php echo e($customer->id); ?>"><?php echo e($customer->number); ?> ( <?php echo e($customer->fname); ?> )</option>
@@ -366,8 +372,9 @@ $count_total = $count_cod_order + $count_online_order;
 							</select>
 						</div>
 						<div class="col-lg-6">
-							<label for="recipient-name" class="form-control-label">Discount On:</label>
-							<select class="form-control" name="discount_per" id="discount_per" required="">
+							<label for="recipient-name" class="form-control-label">Discount On:<span class="mandatory">*</span></label>
+							<input type="hidden" name="discount_per" id="discount_per_hid">
+							<select class="form-control" id="discount_per" required="" disabled>
 								<option value="">--discount--</option>
 								<?php if(!empty($sources)): ?>
 									<?php $__currentLoopData = $sources; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $source): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -382,19 +389,19 @@ $count_total = $count_cod_order + $count_online_order;
 					</div>
 					<div class="form-group row">
 						<div class="col-lg-6">
-							<label for="recipient-name" class="form-control-label">Payable Amount:</label>
+							<label for="recipient-name" class="form-control-label">Payable Amount:<span class="mandatory">*</span></label>
 							<input type="text" class="form-control" name="total_price" id="total_price" readonly="" onkeyup="if(/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required="">
 						</div>
 						<div class="col-lg-6">
-							<label for="recipient-name" class="form-control-label">Discount Amount:</label>
+							<label for="recipient-name" class="form-control-label">Discount Amount:<span class="mandatory">*</span></label>
 							<input type="text" class="form-control" name="discount_price" id="discount_price" readonly="">
 						</div>
 						
 					</div>
 					<div class="form-group row">
 						<div class="col-lg-6">
-							<label for="recipient-name" class="form-control-label">Payment Type:</label>
-							<select class="form-control" data-live-search="true" name="payment_type" required="">
+							<label for="recipient-name" class="form-control-label">Payment Type:<span class="mandatory">*</span></label>
+							<select class="form-control payment_type" data-live-search="true" name="payment_type" required="">
 								<option value="">--select payment type--</option>
 								<option value="Cash">Cash</option>
 								<option value="Card">Card</option>
@@ -406,11 +413,12 @@ $count_total = $count_cod_order + $count_online_order;
 						<label for="message-text" class="form-control-label">Remark:</label>
 						<textarea class="form-control" id="message-text"></textarea>
 					</div>
+					<span class="mandatory note">Note : Add button only enable when you fill all mandatory field</span>
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary submit change_button">Add<i class="la la-spinner change_spin d-none"></i></button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="return window.location.reload();">Close</button>
+				<button type="button" class="btn btn-primary submit change_button" disabled>Add<i class="la la-spinner change_spin d-none"></i></button>
 				<!-- <button type="submit" class="btn btn-primary">Add Order</button> -->
 			</div>
 		</div>
@@ -427,7 +435,7 @@ $count_total = $count_cod_order + $count_online_order;
 
 	$(document).ready(function() {
 
-		$('.kt-selectpicker').selectpicker();
+		$('.kt-selectpicker').selectpicker('val', '');
 
         $(".submit").on("click", function(e) {
             
@@ -493,26 +501,30 @@ $count_total = $count_cod_order + $count_online_order;
 
         });
 
+        $(".total_amount").on("keyup", function(e) {
+        	Customer();
+        	CheckField();
+        });
+
+        $(".captain").on("change", function(e) {
+        	CheckField();
+        });
+
+        $(".payment_type").on("change", function(e) {
+        	CheckField();
+        });
+
         $(".customer").on("change", function(e) {
         	// $('#source_id').val();
         	e.stopImmediatePropagation()
         	var id = $(this).val();
         	if (id == '') {
         		$('#discount_per').val('');
+        		$('#discount_per_hid').val('');
         		return;
         	}
-        	$.each(customers,function(key,value){
-        		if (value.id == id) {
-	        		var date = moment(value.b_date).format('MM-DD');
-		        		if (date == now) {
-		        			GetAmount($('#price').val(),sources2.discount_per);
-		        			$('#discount_per').val(3);
-		        		}else{
-		        			GetAmount($('#price').val(),sources1.discount_per);
-		        			$('#discount_per').val(2);
-		        		}
-        		}
-        	})
+        	console.log($('[name=customer_id]').val().length);
+        	Customer();
         });
 
     });
@@ -653,11 +665,56 @@ $count_total = $count_cod_order + $count_online_order;
 	}
 
 	function GetAmount($total_price,$discount){
+		
 		var discount_price = ((Number($total_price) * Number($discount))/100);
 		var total_price = (Number($total_price) - Number(discount_price)).toFixed(2);
 		$('#total_price').val(total_price);
 		$('#discount_price').val(discount_price);
+		$('#total_price').css({'backgroundColor':'#D8D8D8'});
+		$('#discount_price').css({'backgroundColor':'#D8D8D8'});
 	}
+
+	function Customer(){
+		$.each(customers,function(key,value){
+    		if (value.id == $('[name=customer_id]').val()) {
+        		var date = moment(value.b_date).format('MM-DD');
+	        		if (date == now) {
+	        			GetAmount($('#price').val(),sources2.discount_per);
+	        			$('#discount_per').val(3);
+	        			$('#discount_per_hid').val(sources2.discount_per);
+	        		}else{
+	        			GetAmount($('#price').val(),sources1.discount_per);
+	        			$('#discount_per').val(2);
+	        			$('#discount_per_hid').val(sources1.discount_per);
+	        		}
+    		}
+    	});
+    	CheckField();
+	}
+
+	function EnableSubmit(){
+		$('.submit').prop('disabled',false);
+		$('.note').hide();
+	}
+
+	function CheckField(){
+		
+		if ($('[name=captain_id]').val().length > 0 
+			&& $('.total_amount').val().length > 0
+			&& $('[name=customer_id]').val().length > 0
+			&& $('[name=discount_per]').val().length > 0
+			&& $('#total_price').val().length > 0
+			&& $('#discount_price').val().length > 0
+			&& $('[name=payment_type]').val().length > 0
+
+			) {
+			EnableSubmit();
+		}else{
+			$('.submit').prop('disabled',true);
+			$('.note').show();
+		}
+	}
+	
 </script>
 
 <?php $__env->stopSection(); ?>
