@@ -87,4 +87,8 @@ class LoginController extends Controller
     {
         return Auth::guard('customer');
     }
+
+    public function logoutToPath() {
+        return '/customer/login';
+    }
 }
