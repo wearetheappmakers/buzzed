@@ -1,6 +1,8 @@
-<?php $__env->startSection('content'); ?>
+@extends('admin.main')
 
-<link href="<?php echo e(asset('assets/plugins/custom/datatables/datatables.bundle.css')); ?>" rel="stylesheet" type="text/css" />
+@section('content')
+
+<link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
 
 
 
@@ -26,8 +28,7 @@
 
 					<h3 class="kt-portlet__head-title">
 
-						<?php echo e($module); ?>
-
+						{{ $module }}
 
 					</h3>
 
@@ -39,12 +40,11 @@
 
 						<div class="kt-portlet__head-actions">
 
-							<a href="<?php echo e($create); ?>" class="btn btn-brand btn-elevate btn-icon-sm">
+							<a href="{{ route('admin.membershipamount.create') }}" class="btn btn-brand btn-elevate btn-icon-sm">
 
 								<i class="la la-plus"></i>
 
-								Add <?php echo e($module); ?>
-
+								Add {{ $module }}
 
 							</a>
 
@@ -62,17 +62,15 @@
 
 					<table class="table table-striped- table-bordered table-hover table-checkable datatable" id="datatable_rows">
 
-						<?php echo csrf_field(); ?>
+						@csrf
 
 						<thead>
 
 							<tr>
 
-								<th><input type="checkbox" id="selectall" /></th>
+								<th>#</th>
 
-								<th>Name</th>
-
-								<!-- <th>Seller ID</th> -->
+								<th>Amount</th>
 
 								<th>Status</th>
 
@@ -96,17 +94,17 @@
 
 
 
-			<?php echo $__env->make('admin.layout.multiple_action', array(
+			@include('admin.layout.multiple_action', array(
 
-			'table_name' => 'captain',
+			'table_name' => 'membershipamount',
 
 			'is_orderby'=>'yes',
 
-			'folder_name'=>'captain',
+			'folder_name'=>'membershipamount',
 
 			'action' => array('change-status-1' => __('Active'), 'change-status-0' => __('Inactive'), 'delete' => __('Delete'))
 
-			), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+			))
 
 
 
@@ -116,21 +114,13 @@
 
 </div>
 
-<?php $__env->stopSection(); ?>
+@stop
 
-<?php if(Auth::guard('admin')->check()): ?>
-	<?php $url = route('admin.captain.index'); ?>
-<?php endif; ?>
-
-<?php if(Auth::guard('manager')->check()): ?>
-	<?php $url = route('manager.captain.index'); ?>
-<?php endif; ?>
-
-<?php $__env->startPush('scripts'); ?>
+@push('scripts')
 
 
 
-<script src="<?php echo e(asset('assets/plugins/custom/datatables/datatables.bundle.js')); ?>" type="text/javascript"></script>
+<script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js')}}" type="text/javascript"></script>
 
 
 
@@ -156,7 +146,7 @@
 
 			}],
 
-			ajax: "<?php echo e($url); ?>",
+			ajax: "{{ route('admin.membershipamount.index') }}",
 
 			columns: [{
 
@@ -164,13 +154,13 @@
 
 					searchable: false,
 
-					data: 'checkbox',
+					data: 'id',
 
 				},
 
 				{
 
-					"data": "name"
+					"data": "amount"
 
 				},
 
@@ -216,5 +206,4 @@
 	});
 </script>
 
-<?php $__env->stopPush(); ?>
-<?php echo $__env->make('admin.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/adminseller/captain/index.blade.php ENDPATH**/ ?>
+@endpush

@@ -5,9 +5,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Models\Membership;
+use App\Models\MembershipAmount;
+use App\Helpers\ImageHelper;
+use App\Imports\UsersExport;
 use DataTables;
 use DB;
 use Hash;
+use Excel;
 use Carbon\Carbon;
 
 class VendorController extends Controller
@@ -28,9 +32,9 @@ class VendorController extends Controller
     	$data['type'] = $type;
         if ($request->ajax()) {
             if ($type == 'all') {
-                $query = User::where('role',1)->latest()->get();
+                $query = User::where('role',1)->latest();
             }else{
-			 $query = User::where([['status', $type],['role',1]])->latest()->get();
+			 $query = User::where([['status', $type],['role',1]])->latest();
             }
 			return Datatables::of($query)
 				->addColumn('action', function ($row) {
@@ -46,6 +50,10 @@ class VendorController extends Controller
 					$btn = view('admin.layout.actionbtnpermission')->with(['id' => $row->id, 'route' => $route,'delete' => route('admin.'.$this->route.'.destory') ])->render();
 					return $btn;
 				})
+                ->editColumn('image', function ($row) use($type) {
+                    return view('admin.layout.image')->with(['image'=>$row->image,'folder_name'=>'users']);
+                    
+                })
 				->addColumn('singlecheckbox', function ($row) {
 					$schk = view('admin.layout.activecheckbox')->with(['id' => $row->id , 'status'=>$row->status])->render();
 					return $schk;
@@ -59,10 +67,12 @@ class VendorController extends Controller
 
         if (\Auth::guard('admin')->check()) {
              $data['create'] = route('admin.'.$this->route . '.create');
+             $data['export'] = route('admin.'.$this->route . '.export');
         }
 
         if (\Auth::guard('manager')->check()) {
              $data['create'] = route('manager.'.$this->route . '.create');
+             $data['export'] = route('manager.'.$this->route . '.export');
         }
 
         return view('adminseller.vendors.index')->with($data);
@@ -82,6 +92,7 @@ class VendorController extends Controller
              $data['index'] = route('manager.' . $this->route . '.index','all');
         }
 
+        $data['membershipamount'] = MembershipAmount::where('status',1)->get()->all();
         $data['title'] = 'Add ' . $this->viewName;
         $data['module'] = $this->viewName;
         $data['resourcePath'] = $this->view;
@@ -95,17 +106,34 @@ class VendorController extends Controller
         $param = $request->all();
         $param['password'] = isset($param['spassword']) ? bcrypt($param['spassword']) : bcrypt(12345678);
         $param['role'] = 1;
-        unset($param['amount']);
-        unset($param['payment_type']);
+
+        if ($request->hasFile('image')) {
+            $name = ImageHelper::saveUploadedImage(request()->image, 'Product', storage_path("app/public/uploads/users/"));
+            $param['image']= $name;
+        }
+
+        if ($request->validity_duration == 6) {
+            $validity = Carbon::now()->addMonths(6);
+        }
+
+        if ($request->validity_duration == 12) {
+            $validity = Carbon::now()->addYear();
+        }
+
+        $param['validity_date'] = $validity;
 
         $customer = User::create($param);
+
+        unset($param['payment_type']);
+        unset($param['amount']);
 
         if ($customer){
             Membership::create([
                 'customer_id' => $customer->id,
                 'amount' => $request->amount,
                 'payment_type' => $request->payment_type,
-                'validity' => Carbon::now()->addYear(),
+                'validity' => $validity,
+                'validity_duration' => $request->validity_duration,
             ]);
 			return response()->json(['status'=>'success']);
 		}else{
@@ -126,6 +154,7 @@ class VendorController extends Controller
             $data['index'] = route('manager.' . $this->route . '.index','all');
         }
 
+        $data['membershipamount'] = MembershipAmount::where('status',1)->get()->all();
     	$data['title'] = 'Edit '.$this->viewName;
         $data['edit'] = User::findOrFail($id);
         $data['module'] = $this->viewName;
@@ -138,10 +167,15 @@ class VendorController extends Controller
     public function update(Request $request)
     {
         $param = $request->all();
-        $password = User::findOrFail($request->id);
+        $user = User::findOrFail($request->id);
         unset($param['_token']);
         unset($param['id']);
         $param['password'] = isset($param['spassword']) ? bcrypt($param['spassword']) : bcrypt(12345678);
+
+        if ($request->hasFile('image')) {
+            $name = ImageHelper::saveUploadedImage(request()->image, 'Product', storage_path("app/public/uploads/users/"), $user->image);
+            $param['image']= $name;
+        }
 
     	$vendor = User::where('id',$request->id)->update($param);
 
@@ -202,5 +236,9 @@ class VendorController extends Controller
         }else{
             return response()->json(['success'=> false]);
         }
+    }
+
+    public function export(Request $request){
+        return Excel::download(new UsersExport, 'users.csv');
     }
 }

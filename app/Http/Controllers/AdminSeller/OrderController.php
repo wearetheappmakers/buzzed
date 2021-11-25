@@ -120,6 +120,10 @@ class OrderController extends Controller
                     if (\Auth::guard('admin')->check()) {
                         $route = route('admin.order.detail', $row->id);
                     }
+
+                    if (\Auth::guard('customer')->check()) {
+                        $route = route('customer.order.detail', $row->id);
+                    }
                     $action = '<a style="background: green;" href="'.$route.'" title="View details" class="btn btn-sm btn-clean btn-icon btn-icon-md">
                                     <i style="color: white;" class="la la-eye"></i>
                             </a>';

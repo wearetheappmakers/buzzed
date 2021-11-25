@@ -58,6 +58,9 @@ Route::group(['prefix' => 'customer'], function () {
     Route::any('/get-order-list/', 'AdminSeller\OrderController@index')->name('customer.order.index');
     Route::any('/customer/validate/', 'CustomerAuth\LoginController@customerValidate')->name('customer.validate');
     Route::get('/get-saved-balance', 'AdminSeller\OrderController@getSavedBalance')->name('get.saved.balance');
+    Route::get('/change-multiple-status', 'AdminSeller\HomeController@changeMultipleStatus')->name('customer.change-multiple-status');
+    Route::any('/get-order-list/', 'AdminSeller\OrderController@index')->name('customer.order.index');
+    Route::any('/order-detail/{order_header_id}', 'AdminSeller\OrderController@detail')->name('customer.order.detail');
 });
 
 Route::group(['prefix' => 'manager'], function () {
@@ -94,6 +97,7 @@ Route::group(['prefix' => 'manager'], function () {
     Route::post('/destory/record', 'AdminSeller\VendorController@destory')->name('manager.vendors.destory');
     Route::any('/change/status', 'AdminSeller\VendorController@change_status')->name('manager.vendors.change_status');
   });
+    Route::get('export', 'AdminSeller\VendorController@export')->name('manager.vendors.export');
 
   Route::get('/change-multiple-status', 'AdminSeller\HomeController@changeMultipleStatus')->name('manager.change-multiple-status');
 

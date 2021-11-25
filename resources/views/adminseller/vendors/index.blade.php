@@ -49,6 +49,14 @@
 
 							</a>
 
+							<a href="{{ $export }}" class="btn btn-brand btn-elevate btn-icon-sm">
+
+								<i class="la la-plus"></i>
+
+								Export Customer list
+
+							</a>
+
 						</div>
 
 					</div>
@@ -73,6 +81,7 @@
 								<th>First Name</th>
 								<th>Last Name</th>
 								<th>Contact No</th>
+								<th>Image</th>
 								<th>Is Active</th>
 								<th>Action</th>
 
@@ -146,10 +155,6 @@
 
 			}],
 
-			dom: 'Bfrtip',
-	        buttons: [
-	            'csv', 'pdf'
-	        ],
 
 			ajax: "{{ $url }}",
 
@@ -177,11 +182,11 @@
 
 				},
 
-				// {
+				{
 
-				// 	"data": "is_active"
+					"data": "image"
 
-				// },
+				},
 
 				// {
 

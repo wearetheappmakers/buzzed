@@ -62,8 +62,12 @@
                                 </div>
 
                                 <div class="col-lg-4">
-                                    <label>Validity Date:</label>
-                                    <input type="date" class="form-control" placeholder="Enter Validity Date" name="validity_date" id="validity_date" value="{{ $edit->validity_date }}" autocomplete="off">
+                                    <label>Validity</label>
+                                    <select class="form-control" name="validity_duration" required="">
+                                        <option value="">--Select Validity Duration--</option>
+                                        <option value="6" @if($edit->validity_duration == 6) selected @endif>6 Month</option>
+                                        <option value="12" @if($edit->validity_duration == 12) selected @endif>1 Year</option>
+                                    </select>
                                 </div>
                                 
                             </div>
@@ -83,7 +87,14 @@
                                 
                                 <div class="col-lg-4">
                                     <label>Membership Amount</label>
-                                     <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" value="{{ $edit->amount }}" required autocomplete="off">
+                                    <select class="form-control" name="amount" required="">
+                                        <option value="">--Select Membership Amount--</option>
+                                        @if(!empty($membershipamount))
+                                            @foreach($membershipamount as $ma)
+                                                <option value="{{ $ma->amount }}" @if($edit->amount == $ma->amount) selected @endif>{{ $ma->amount }}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
 
                                 <div class="col-lg-4">
@@ -99,6 +110,21 @@
                             </div>
 
                             <div class="form-group row">
+                                <div class="col-lg-4">
+                                    <label>Upload ID/Proof Image:</label>
+                                    <input type="file" class="form-control" name="image">
+                                </div>
+                                <div class="col-lg-4">
+                                     @if($edit->image)
+                                        <div class="image_layer">
+                                            <div class="image_div">
+                                                <a target="_blank"  href="{{ url('storage/uploads/users/'.$edit->image) }}" rel="gallery" class="fancybox" title="">
+                                                    <img src="{{ url('storage/uploads/users/Tiny/'.$edit->image) }}" class="img-thumbnail" alt="{{ $edit->image }}" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </div>
                                 <div class="col-lg-4">
                                         <label>Status:</label>
                                         <select class="form-control" name="status">

@@ -62,6 +62,8 @@ Route::resource('staff','AdminSeller\StaffController');
 
 Route::resource('captain','AdminSeller\CaptainController');
 Route::resource('outlet','AdminSeller\OutletController');
+Route::resource('membershipamount','AdminSeller\MembershipAmountController');
+
 
 Route::post('category-destory','AdminSeller\CategoryController@destory')->name('category.destory');
 
@@ -127,6 +129,7 @@ Route::get('/customer/edit/{id}/edit', 'AdminSeller\VendorController@edit')->nam
 Route::post('/customer/update/form', 'AdminSeller\VendorController@update')->name('vendors.update');
 Route::post('/customer/destory/record', 'AdminSeller\VendorController@destory')->name('vendors.destory');
 Route::any('/customer/change/status', 'AdminSeller\VendorController@change_status')->name('vendors.change_status');
+Route::get('export', 'AdminSeller\VendorController@export')->name('vendors.export');
 
 
 //location management
@@ -166,4 +169,5 @@ Route::post('discount-destory','AdminSeller\DiscountController@destory')->name('
 Route::post('captain-destory','AdminSeller\CaptainController@destory')->name('captain.destory');
 Route::post('outlet-destory','AdminSeller\OutletController@destory')->name('outlet.destory');
 Route::post('staff-destory','AdminSeller\StaffController@destory')->name('staff.destory');
+Route::post('membershipamount-destory','AdminSeller\MembershipAmountController@destory')->name('membershipamount.destory');
 

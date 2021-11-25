@@ -1,957 +1,0 @@
-[2021-10-25 11:13:34] local.ERROR: Route [admin.banner.index] not defined. (View: D:\rohit\buzzed\buzzed\resources\views\admin\layout\header.blade.php) (View: D:\rohit\buzzed\buzzed\resources\views\admin\layout\header.blade.php) (View: D:\rohit\buzzed\buzzed\resources\views\admin\layout\header.blade.php) {"userId":1,"exception":"[object] (ErrorException(code: 0): Route [admin.banner.index] not defined. (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:388, ErrorException(code: 0): Route [admin.banner.index] not defined. (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:388, ErrorException(code: 0): Route [admin.banner.index] not defined. (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:388, InvalidArgumentException(code: 0): Route [admin.banner.index] not defined. at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:388)
-[stacktrace]
-#0 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
-#1 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\ohit\\\\buzzed...', Array)
-#2 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(142): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\ohit\\\\buzzed...', Array)
-#3 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(125): Illuminate\\View\\View->getContents()
-#4 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(90): Illuminate\\View\\View->renderContents()
-#5 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(42): Illuminate\\View\\View->render()
-#6 D:\ohit\\buzzed\\buzzed\\vendor\\symfony\\http-foundation\\Response.php(205): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
-#7 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Symfony\\Component\\HttpFoundation\\Response->__construct(Object(Illuminate\\View\\View))
-#8 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(720): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
-#9 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(680): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
-#10 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#11 D:\ohit\\buzzed\\buzzed\\app\\Http\\Middleware\\RedirectIfNotAdmin.php(24): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#12 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): App\\Http\\Middleware\\RedirectIfNotAdmin->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#13 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#14 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#15 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#16 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#17 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#18 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'admin')
-#19 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#20 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#21 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#22 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#23 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#24 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#25 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#26 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#27 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#28 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#29 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#30 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#31 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#32 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#33 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#34 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#35 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#36 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#37 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
-#38 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
-#39 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
-#40 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
-#41 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
-#42 D:\ohit\\buzzed\\buzzed\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#43 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#44 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#45 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#46 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#47 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#48 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#49 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#50 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#51 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#52 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#53 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#54 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#55 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#56 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#57 D:\ohit\\buzzed\\buzzed\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#58 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#59 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#60 D:\ohit\\buzzed\\buzzed\\vendor\\dingo\\api\\src\\Http\\Middleware\\Request.php(111): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#61 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Dingo\\Api\\Http\\Middleware\\Request->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#62 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#63 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#64 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#65 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
-#66 D:\ohit\\buzzed\\buzzed\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
-#67 D:\ohit\\buzzed\\buzzed\\server.php(21): require_once('D:\\\ohit\\\\buzzed...')
-#68 {main}
-"} 
-[2021-10-25 11:37:39] local.ERROR: ErrorException: Undefined variable: delete in D:\rohit\buzzed\buzzed\storage\framework\views\89b764f872f9cba66eee3e893d9589410ef003b5.php:22
-Stack trace:
-#0 D:\rohit\buzzed\buzzed\storage\framework\views\89b764f872f9cba66eee3e893d9589410ef003b5.php(22): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', 'D:\\rohit\\buzzed...', 22, Array)
-#1 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(43): include('D:\\rohit\\buzzed...')
-#2 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\\rohit\\buzzed...', Array)
-#3 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(142): Illuminate\View\Engines\CompilerEngine->get('D:\\rohit\\buzzed...', Array)
-#4 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(125): Illuminate\View\View->getContents()
-#5 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(90): Illuminate\View\View->renderContents()
-#6 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\StaticPageController.php(35): Illuminate\View\View->render()
-#7 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Utilities\Helper.php(65): App\Http\Controllers\AdminSeller\StaticPageController->App\Http\Controllers\AdminSeller\{closure}(Object(App\Models\StaticPage))
-#8 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(131): Yajra\DataTables\Utilities\Helper::compileContent(Object(Closure), Array, Object(App\Models\StaticPage))
-#9 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(105): Yajra\DataTables\Processors\DataProcessor->addColumns(Array, Object(App\Models\StaticPage))
-#10 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\DataTableAbstract.php(753): Yajra\DataTables\Processors\DataProcessor->process(true)
-#11 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\CollectionDataTable.php(164): Yajra\DataTables\DataTableAbstract->processResults(Array, true)
-#12 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\StaticPageController.php(61): Yajra\DataTables\CollectionDataTable->make(true)
-#13 [internal function]: App\Http\Controllers\AdminSeller\StaticPageController->index('1', Object(Illuminate\Http\Request))
-#14 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(54): call_user_func_array(Array, Array)
-#15 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('index', Array)
-#16 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(219): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\AdminSeller\StaticPageController), 'index')
-#17 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(176): Illuminate\Routing\Route->runController()
-#18 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(680): Illuminate\Routing\Route->run()
-#19 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#20 D:\rohit\buzzed\buzzed\app\Http\Middleware\RedirectIfNotAdmin.php(24): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#21 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): App\Http\Middleware\RedirectIfNotAdmin->handle(Object(Illuminate\Http\Request), Object(Closure))
-#22 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#23 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#24 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
-#25 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#26 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php(43): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#27 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'admin')
-#28 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#29 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php(75): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#30 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
-#31 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#32 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#33 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#34 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#35 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(56): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#36 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#37 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#38 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#39 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
-#40 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#41 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php(66): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#42 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#43 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#44 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#45 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(682): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#46 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(657): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
-#47 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(623): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
-#48 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(612): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
-#49 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
-#50 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
-#51 D:\rohit\buzzed\buzzed\vendor\fruitcake\laravel-cors\src\HandleCors.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#52 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fruitcake\Cors\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
-#53 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#54 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#55 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#56 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#57 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#58 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#59 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#60 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#61 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
-#62 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#63 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(62): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#64 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
-#65 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#66 D:\rohit\buzzed\buzzed\vendor\fideloper\proxy\src\TrustProxies.php(57): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#67 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fideloper\Proxy\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#68 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#69 D:\rohit\buzzed\buzzed\vendor\dingo\api\src\Http\Middleware\Request.php(111): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#70 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Dingo\Api\Http\Middleware\Request->handle(Object(Illuminate\Http\Request), Object(Closure))
-#71 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#72 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#73 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#74 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
-#75 D:\rohit\buzzed\buzzed\public\index.php(55): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
-#76 D:\rohit\buzzed\buzzed\server.php(21): require_once('D:\\rohit\\buzzed...')
-#77 {main}
-
-Next ErrorException: Undefined variable: delete (View: D:\rohit\buzzed\buzzed\resources\views\admin\layout\actionbtnpermission.blade.php) in D:\rohit\buzzed\buzzed\storage\framework\views\89b764f872f9cba66eee3e893d9589410ef003b5.php:22
-Stack trace:
-#0 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(45): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
-#1 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\\rohit\\buzzed...', Array)
-#2 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(142): Illuminate\View\Engines\CompilerEngine->get('D:\\rohit\\buzzed...', Array)
-#3 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(125): Illuminate\View\View->getContents()
-#4 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(90): Illuminate\View\View->renderContents()
-#5 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\StaticPageController.php(35): Illuminate\View\View->render()
-#6 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Utilities\Helper.php(65): App\Http\Controllers\AdminSeller\StaticPageController->App\Http\Controllers\AdminSeller\{closure}(Object(App\Models\StaticPage))
-#7 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(131): Yajra\DataTables\Utilities\Helper::compileContent(Object(Closure), Array, Object(App\Models\StaticPage))
-#8 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(105): Yajra\DataTables\Processors\DataProcessor->addColumns(Array, Object(App\Models\StaticPage))
-#9 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\DataTableAbstract.php(753): Yajra\DataTables\Processors\DataProcessor->process(true)
-#10 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\CollectionDataTable.php(164): Yajra\DataTables\DataTableAbstract->processResults(Array, true)
-#11 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\StaticPageController.php(61): Yajra\DataTables\CollectionDataTable->make(true)
-#12 [internal function]: App\Http\Controllers\AdminSeller\StaticPageController->index('1', Object(Illuminate\Http\Request))
-#13 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(54): call_user_func_array(Array, Array)
-#14 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('index', Array)
-#15 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(219): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\AdminSeller\StaticPageController), 'index')
-#16 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(176): Illuminate\Routing\Route->runController()
-#17 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(680): Illuminate\Routing\Route->run()
-#18 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#19 D:\rohit\buzzed\buzzed\app\Http\Middleware\RedirectIfNotAdmin.php(24): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#20 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): App\Http\Middleware\RedirectIfNotAdmin->handle(Object(Illuminate\Http\Request), Object(Closure))
-#21 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#22 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#23 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
-#24 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#25 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php(43): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#26 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'admin')
-#27 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#28 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php(75): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#29 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
-#30 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#31 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#32 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#33 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#34 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(56): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#35 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#36 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#37 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#38 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
-#39 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#40 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php(66): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#41 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#42 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#43 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#44 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(682): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#45 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(657): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
-#46 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(623): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
-#47 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(612): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
-#48 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
-#49 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
-#50 D:\rohit\buzzed\buzzed\vendor\fruitcake\laravel-cors\src\HandleCors.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#51 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fruitcake\Cors\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
-#52 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#53 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#54 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#55 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#56 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#57 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#58 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#59 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#60 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
-#61 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#62 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(62): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#63 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
-#64 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#65 D:\rohit\buzzed\buzzed\vendor\fideloper\proxy\src\TrustProxies.php(57): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#66 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fideloper\Proxy\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#67 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#68 D:\rohit\buzzed\buzzed\vendor\dingo\api\src\Http\Middleware\Request.php(111): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#69 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Dingo\Api\Http\Middleware\Request->handle(Object(Illuminate\Http\Request), Object(Closure))
-#70 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#71 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#72 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#73 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
-#74 D:\rohit\buzzed\buzzed\public\index.php(55): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
-#75 D:\rohit\buzzed\buzzed\server.php(21): require_once('D:\\rohit\\buzzed...')
-#76 {main}  
-[2021-10-25 11:37:51] local.ERROR: ErrorException: Undefined variable: delete in D:\rohit\buzzed\buzzed\storage\framework\views\89b764f872f9cba66eee3e893d9589410ef003b5.php:22
-Stack trace:
-#0 D:\rohit\buzzed\buzzed\storage\framework\views\89b764f872f9cba66eee3e893d9589410ef003b5.php(22): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', 'D:\\rohit\\buzzed...', 22, Array)
-#1 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(43): include('D:\\rohit\\buzzed...')
-#2 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\\rohit\\buzzed...', Array)
-#3 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(142): Illuminate\View\Engines\CompilerEngine->get('D:\\rohit\\buzzed...', Array)
-#4 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(125): Illuminate\View\View->getContents()
-#5 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(90): Illuminate\View\View->renderContents()
-#6 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\StaticPageController.php(35): Illuminate\View\View->render()
-#7 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Utilities\Helper.php(65): App\Http\Controllers\AdminSeller\StaticPageController->App\Http\Controllers\AdminSeller\{closure}(Object(App\Models\StaticPage))
-#8 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(131): Yajra\DataTables\Utilities\Helper::compileContent(Object(Closure), Array, Object(App\Models\StaticPage))
-#9 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(105): Yajra\DataTables\Processors\DataProcessor->addColumns(Array, Object(App\Models\StaticPage))
-#10 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\DataTableAbstract.php(753): Yajra\DataTables\Processors\DataProcessor->process(true)
-#11 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\CollectionDataTable.php(164): Yajra\DataTables\DataTableAbstract->processResults(Array, true)
-#12 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\StaticPageController.php(61): Yajra\DataTables\CollectionDataTable->make(true)
-#13 [internal function]: App\Http\Controllers\AdminSeller\StaticPageController->index('1', Object(Illuminate\Http\Request))
-#14 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(54): call_user_func_array(Array, Array)
-#15 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('index', Array)
-#16 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(219): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\AdminSeller\StaticPageController), 'index')
-#17 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(176): Illuminate\Routing\Route->runController()
-#18 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(680): Illuminate\Routing\Route->run()
-#19 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#20 D:\rohit\buzzed\buzzed\app\Http\Middleware\RedirectIfNotAdmin.php(24): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#21 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): App\Http\Middleware\RedirectIfNotAdmin->handle(Object(Illuminate\Http\Request), Object(Closure))
-#22 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#23 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#24 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
-#25 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#26 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php(43): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#27 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'admin')
-#28 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#29 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php(75): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#30 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
-#31 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#32 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#33 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#34 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#35 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(56): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#36 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#37 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#38 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#39 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
-#40 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#41 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php(66): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#42 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#43 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#44 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#45 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(682): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#46 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(657): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
-#47 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(623): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
-#48 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(612): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
-#49 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
-#50 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
-#51 D:\rohit\buzzed\buzzed\vendor\fruitcake\laravel-cors\src\HandleCors.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#52 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fruitcake\Cors\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
-#53 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#54 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#55 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#56 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#57 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#58 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#59 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#60 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#61 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
-#62 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#63 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(62): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#64 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
-#65 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#66 D:\rohit\buzzed\buzzed\vendor\fideloper\proxy\src\TrustProxies.php(57): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#67 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fideloper\Proxy\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#68 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#69 D:\rohit\buzzed\buzzed\vendor\dingo\api\src\Http\Middleware\Request.php(111): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#70 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Dingo\Api\Http\Middleware\Request->handle(Object(Illuminate\Http\Request), Object(Closure))
-#71 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#72 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#73 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#74 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
-#75 D:\rohit\buzzed\buzzed\public\index.php(55): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
-#76 D:\rohit\buzzed\buzzed\server.php(21): require_once('D:\\rohit\\buzzed...')
-#77 {main}
-
-Next ErrorException: Undefined variable: delete (View: D:\rohit\buzzed\buzzed\resources\views\admin\layout\actionbtnpermission.blade.php) in D:\rohit\buzzed\buzzed\storage\framework\views\89b764f872f9cba66eee3e893d9589410ef003b5.php:22
-Stack trace:
-#0 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(45): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
-#1 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('D:\\rohit\\buzzed...', Array)
-#2 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(142): Illuminate\View\Engines\CompilerEngine->get('D:\\rohit\\buzzed...', Array)
-#3 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(125): Illuminate\View\View->getContents()
-#4 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\View.php(90): Illuminate\View\View->renderContents()
-#5 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\StaticPageController.php(35): Illuminate\View\View->render()
-#6 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Utilities\Helper.php(65): App\Http\Controllers\AdminSeller\StaticPageController->App\Http\Controllers\AdminSeller\{closure}(Object(App\Models\StaticPage))
-#7 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(131): Yajra\DataTables\Utilities\Helper::compileContent(Object(Closure), Array, Object(App\Models\StaticPage))
-#8 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(105): Yajra\DataTables\Processors\DataProcessor->addColumns(Array, Object(App\Models\StaticPage))
-#9 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\DataTableAbstract.php(753): Yajra\DataTables\Processors\DataProcessor->process(true)
-#10 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\CollectionDataTable.php(164): Yajra\DataTables\DataTableAbstract->processResults(Array, true)
-#11 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\StaticPageController.php(61): Yajra\DataTables\CollectionDataTable->make(true)
-#12 [internal function]: App\Http\Controllers\AdminSeller\StaticPageController->index('1', Object(Illuminate\Http\Request))
-#13 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(54): call_user_func_array(Array, Array)
-#14 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('index', Array)
-#15 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(219): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\AdminSeller\StaticPageController), 'index')
-#16 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(176): Illuminate\Routing\Route->runController()
-#17 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(680): Illuminate\Routing\Route->run()
-#18 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#19 D:\rohit\buzzed\buzzed\app\Http\Middleware\RedirectIfNotAdmin.php(24): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#20 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): App\Http\Middleware\RedirectIfNotAdmin->handle(Object(Illuminate\Http\Request), Object(Closure))
-#21 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#22 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#23 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
-#24 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#25 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php(43): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#26 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'admin')
-#27 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#28 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php(75): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#29 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
-#30 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#31 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#32 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#33 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#34 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(56): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#35 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#36 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#37 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#38 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
-#39 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#40 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php(66): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#41 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#42 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#43 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#44 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(682): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#45 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(657): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
-#46 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(623): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
-#47 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(612): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
-#48 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
-#49 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
-#50 D:\rohit\buzzed\buzzed\vendor\fruitcake\laravel-cors\src\HandleCors.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#51 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fruitcake\Cors\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
-#52 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#53 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#54 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#55 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#56 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#57 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#58 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#59 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#60 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
-#61 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#62 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(62): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#63 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
-#64 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#65 D:\rohit\buzzed\buzzed\vendor\fideloper\proxy\src\TrustProxies.php(57): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#66 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fideloper\Proxy\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#67 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#68 D:\rohit\buzzed\buzzed\vendor\dingo\api\src\Http\Middleware\Request.php(111): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#69 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Dingo\Api\Http\Middleware\Request->handle(Object(Illuminate\Http\Request), Object(Closure))
-#70 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#71 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#72 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#73 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
-#74 D:\rohit\buzzed\buzzed\public\index.php(55): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
-#75 D:\rohit\buzzed\buzzed\server.php(21): require_once('D:\\rohit\\buzzed...')
-#76 {main}  
-[2021-10-25 14:50:19] local.ERROR: Undefined variable: resourcePath (View: D:\rohit\buzzed\buzzed\resources\views\registration.blade.php) {"exception":"[object] (ErrorException(code: 0): Undefined variable: resourcePath (View: D:\ohit\\buzzed\\buzzed\esources\\views\egistration.blade.php) at D:\ohit\\buzzed\\buzzed\\storage\\framework\\views\\db8f4676372f145a4924666d6ba507bc8faf94d9.php:41, ErrorException(code: 0): Undefined variable: resourcePath at D:\ohit\\buzzed\\buzzed\\storage\\framework\\views\\db8f4676372f145a4924666d6ba507bc8faf94d9.php:41)
-[stacktrace]
-#0 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
-#1 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\ohit\\\\buzzed...', Array)
-#2 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(142): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\ohit\\\\buzzed...', Array)
-#3 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(125): Illuminate\\View\\View->getContents()
-#4 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(90): Illuminate\\View\\View->renderContents()
-#5 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(42): Illuminate\\View\\View->render()
-#6 D:\ohit\\buzzed\\buzzed\\vendor\\symfony\\http-foundation\\Response.php(205): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
-#7 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Symfony\\Component\\HttpFoundation\\Response->__construct(Object(Illuminate\\View\\View))
-#8 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(720): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
-#9 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(680): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
-#10 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#11 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#12 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#13 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#14 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#15 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#16 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#17 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#18 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#19 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#20 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#21 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#22 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#23 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#24 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#25 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#26 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#27 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#28 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#29 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#30 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#31 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
-#32 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
-#33 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
-#34 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
-#35 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
-#36 D:\ohit\\buzzed\\buzzed\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#37 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#38 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#39 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#40 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#41 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#42 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#43 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#44 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#45 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#46 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#47 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#48 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#49 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#50 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#51 D:\ohit\\buzzed\\buzzed\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#52 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#53 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#54 D:\ohit\\buzzed\\buzzed\\vendor\\dingo\\api\\src\\Http\\Middleware\\Request.php(111): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#55 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Dingo\\Api\\Http\\Middleware\\Request->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#56 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#57 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#58 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#59 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
-#60 D:\ohit\\buzzed\\buzzed\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
-#61 D:\ohit\\buzzed\\buzzed\\server.php(21): require_once('D:\\\ohit\\\\buzzed...')
-#62 {main}
-"} 
-[2021-10-25 14:50:53] local.ERROR: Missing required parameters for [Route: admin.vendors.index] [URI: admin/customer/{type}]. (View: D:\rohit\buzzed\buzzed\resources\views\registration.blade.php) {"exception":"[object] (ErrorException(code: 0): Missing required parameters for [Route: admin.vendors.index] [URI: admin/customer/{type}]. (View: D:\ohit\\buzzed\\buzzed\esources\\views\egistration.blade.php) at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Exceptions\\UrlGenerationException.php:17, Illuminate\\Routing\\Exceptions\\UrlGenerationException(code: 0): Missing required parameters for [Route: admin.vendors.index] [URI: admin/customer/{type}]. at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Exceptions\\UrlGenerationException.php:17)
-[stacktrace]
-#0 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(Illuminate\\Routing\\Exceptions\\UrlGenerationException), 1)
-#1 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\ohit\\\\buzzed...', Array)
-#2 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(142): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\ohit\\\\buzzed...', Array)
-#3 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(125): Illuminate\\View\\View->getContents()
-#4 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(90): Illuminate\\View\\View->renderContents()
-#5 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(42): Illuminate\\View\\View->render()
-#6 D:\ohit\\buzzed\\buzzed\\vendor\\symfony\\http-foundation\\Response.php(205): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
-#7 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Symfony\\Component\\HttpFoundation\\Response->__construct(Object(Illuminate\\View\\View))
-#8 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(720): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
-#9 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(680): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
-#10 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#11 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#12 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#13 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#14 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#15 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#16 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#17 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#18 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#19 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#20 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#21 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#22 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#23 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#24 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#25 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#26 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#27 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#28 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#29 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#30 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#31 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
-#32 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
-#33 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
-#34 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
-#35 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
-#36 D:\ohit\\buzzed\\buzzed\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#37 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#38 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#39 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#40 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#41 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#42 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#43 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#44 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#45 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#46 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#47 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#48 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#49 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#50 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#51 D:\ohit\\buzzed\\buzzed\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#52 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#53 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#54 D:\ohit\\buzzed\\buzzed\\vendor\\dingo\\api\\src\\Http\\Middleware\\Request.php(111): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#55 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Dingo\\Api\\Http\\Middleware\\Request->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#56 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#57 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#58 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#59 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
-#60 D:\ohit\\buzzed\\buzzed\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
-#61 D:\ohit\\buzzed\\buzzed\\server.php(21): require_once('D:\\\ohit\\\\buzzed...')
-#62 {main}
-"} 
-[2021-10-25 14:51:08] local.ERROR: Trying to get property 'orders' of non-object (View: D:\rohit\buzzed\buzzed\resources\views\admin\layout\header.blade.php) (View: D:\rohit\buzzed\buzzed\resources\views\admin\layout\header.blade.php) (View: D:\rohit\buzzed\buzzed\resources\views\admin\layout\header.blade.php) {"exception":"[object] (ErrorException(code: 0): Trying to get property 'orders' of non-object (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) at D:\ohit\\buzzed\\buzzed\\storage\\framework\\views\\4f3a8816badb03a8c398d5315b95f795e9d7d6a6.php:291, ErrorException(code: 0): Trying to get property 'orders' of non-object (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) at D:\ohit\\buzzed\\buzzed\\storage\\framework\\views\\4f3a8816badb03a8c398d5315b95f795e9d7d6a6.php:291, ErrorException(code: 0): Trying to get property 'orders' of non-object (View: D:\ohit\\buzzed\\buzzed\esources\\views\\admin\\layout\\header.blade.php) at D:\ohit\\buzzed\\buzzed\\storage\\framework\\views\\4f3a8816badb03a8c398d5315b95f795e9d7d6a6.php:291, ErrorException(code: 0): Trying to get property 'orders' of non-object at D:\ohit\\buzzed\\buzzed\\storage\\framework\\views\\4f3a8816badb03a8c398d5315b95f795e9d7d6a6.php:291)
-[stacktrace]
-#0 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
-#1 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\ohit\\\\buzzed...', Array)
-#2 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(142): Illuminate\\View\\Engines\\CompilerEngine->get('D:\\\ohit\\\\buzzed...', Array)
-#3 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(125): Illuminate\\View\\View->getContents()
-#4 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(90): Illuminate\\View\\View->renderContents()
-#5 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(42): Illuminate\\View\\View->render()
-#6 D:\ohit\\buzzed\\buzzed\\vendor\\symfony\\http-foundation\\Response.php(205): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
-#7 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Symfony\\Component\\HttpFoundation\\Response->__construct(Object(Illuminate\\View\\View))
-#8 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(720): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
-#9 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(680): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
-#10 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#11 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#12 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#13 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#14 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#15 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#16 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#17 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#18 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#19 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#20 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#21 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#22 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#23 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#24 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#25 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#26 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#27 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#28 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#29 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#30 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#31 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
-#32 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
-#33 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
-#34 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
-#35 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
-#36 D:\ohit\\buzzed\\buzzed\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#37 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#38 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#39 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#40 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#41 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#42 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#43 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#44 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#45 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#46 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#47 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#48 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#49 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#50 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#51 D:\ohit\\buzzed\\buzzed\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#52 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#53 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#54 D:\ohit\\buzzed\\buzzed\\vendor\\dingo\\api\\src\\Http\\Middleware\\Request.php(111): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#55 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Dingo\\Api\\Http\\Middleware\\Request->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#56 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#57 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#58 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#59 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
-#60 D:\ohit\\buzzed\\buzzed\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
-#61 D:\ohit\\buzzed\\buzzed\\server.php(21): require_once('D:\\\ohit\\\\buzzed...')
-#62 {main}
-"} 
-[2021-10-25 15:56:08] local.ERROR: Class App\Http\Controllers\AdminSeller\CaptainController does not exist {"exception":"[object] (ReflectionException(code: -1): Class App\\Http\\Controllers\\AdminSeller\\CaptainController does not exist at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:788)
-[stacktrace]
-#0 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(788): ReflectionClass->__construct('App\\\\Http\\\\Contro...')
-#1 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(667): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
-#2 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(615): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array)
-#3 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(767): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
-#4 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(233): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
-#5 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(833): Illuminate\\Routing\\Route->getController()
-#6 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(794): Illuminate\\Routing\\Route->controllerMiddleware()
-#7 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(693): Illuminate\\Routing\\Route->gatherMiddleware()
-#8 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(673): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
-#9 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
-#10 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
-#11 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
-#12 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
-#13 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
-#14 D:\ohit\\buzzed\\buzzed\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#15 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#16 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#17 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#18 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#19 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#20 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#21 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#22 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#23 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#24 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#25 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#26 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#27 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#28 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#29 D:\ohit\\buzzed\\buzzed\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#30 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#31 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#32 D:\ohit\\buzzed\\buzzed\\vendor\\dingo\\api\\src\\Http\\Middleware\\Request.php(111): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#33 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Dingo\\Api\\Http\\Middleware\\Request->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#34 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#35 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#36 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#37 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
-#38 D:\ohit\\buzzed\\buzzed\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
-#39 D:\ohit\\buzzed\\buzzed\\server.php(21): require_once('D:\\\ohit\\\\buzzed...')
-#40 {main}
-"} 
-[2021-10-25 15:56:40] local.ERROR: Class App\Http\Controllers\AdminSeller\Color does not exist {"exception":"[object] (ReflectionException(code: 0): Class App\\Http\\Controllers\\AdminSeller\\Color does not exist at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:853)
-[stacktrace]
-#0 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(853): ReflectionParameter->getClass()
-#1 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(816): Illuminate\\Container\\Container->resolveDependencies(Array)
-#2 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(667): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
-#3 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(615): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array)
-#4 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(767): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
-#5 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(233): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
-#6 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(833): Illuminate\\Routing\\Route->getController()
-#7 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(794): Illuminate\\Routing\\Route->controllerMiddleware()
-#8 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(693): Illuminate\\Routing\\Route->gatherMiddleware()
-#9 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(673): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
-#10 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
-#11 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
-#12 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
-#13 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
-#14 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
-#15 D:\ohit\\buzzed\\buzzed\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#16 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#17 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#18 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#19 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#20 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#21 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#22 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#23 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#24 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#25 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#26 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#27 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#28 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#29 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#30 D:\ohit\\buzzed\\buzzed\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#31 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#32 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#33 D:\ohit\\buzzed\\buzzed\\vendor\\dingo\\api\\src\\Http\\Middleware\\Request.php(111): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#34 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Dingo\\Api\\Http\\Middleware\\Request->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#35 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#36 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#37 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#38 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
-#39 D:\ohit\\buzzed\\buzzed\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
-#40 D:\ohit\\buzzed\\buzzed\\server.php(21): require_once('D:\\\ohit\\\\buzzed...')
-#41 {main}
-"} 
-[2021-10-25 16:11:11] local.ERROR: Class App\Http\Controllers\AdminSeller\Color does not exist {"exception":"[object] (ReflectionException(code: 0): Class App\\Http\\Controllers\\AdminSeller\\Color does not exist at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:853)
-[stacktrace]
-#0 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(853): ReflectionParameter->getClass()
-#1 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(816): Illuminate\\Container\\Container->resolveDependencies(Array)
-#2 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(667): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
-#3 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(615): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array)
-#4 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(767): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
-#5 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(233): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
-#6 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(833): Illuminate\\Routing\\Route->getController()
-#7 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(794): Illuminate\\Routing\\Route->controllerMiddleware()
-#8 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(693): Illuminate\\Routing\\Route->gatherMiddleware()
-#9 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(673): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
-#10 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
-#11 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
-#12 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
-#13 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
-#14 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
-#15 D:\ohit\\buzzed\\buzzed\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#16 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#17 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#18 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#19 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#20 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#21 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#22 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#23 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#24 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#25 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#26 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#27 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#28 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#29 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#30 D:\ohit\\buzzed\\buzzed\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#31 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#32 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#33 D:\ohit\\buzzed\\buzzed\\vendor\\dingo\\api\\src\\Http\\Middleware\\Request.php(111): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#34 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Dingo\\Api\\Http\\Middleware\\Request->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#35 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#36 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#37 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#38 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
-#39 D:\ohit\\buzzed\\buzzed\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
-#40 D:\ohit\\buzzed\\buzzed\\server.php(21): require_once('D:\\\ohit\\\\buzzed...')
-#41 {main}
-"} 
-[2021-10-25 16:46:43] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'admin_buzzed.captain' doesn't exist (SQL: select * from `captain` where `captain`.`deleted_at` is null) {"userId":1,"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'admin_buzzed.captain' doesn't exist (SQL: select * from `captain` where `captain`.`deleted_at` is null) at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'admin_buzzed.captain' doesn't exist at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:326)
-[stacktrace]
-#0 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
-#1 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(333): Illuminate\\Database\\Connection->run('select * from `...', Array, Object(Closure))
-#2 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2130): Illuminate\\Database\\Connection->select('select * from `...', Array, true)
-#3 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2118): Illuminate\\Database\\Query\\Builder->runSelect()
-#4 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2604): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#5 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2119): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
-#6 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(521): Illuminate\\Database\\Query\\Builder->get(Array)
-#7 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(505): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
-#8 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->get()
-#9 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1618): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'get', Array)
-#10 D:\ohit\\buzzed\\buzzed\\app\\Http\\Controllers\\AdminSeller\\CaptainController.php(31): Illuminate\\Database\\Eloquent\\Model->__call('get', Array)
-#11 [internal function]: App\\Http\\Controllers\\AdminSeller\\CaptainController->index(Object(Illuminate\\Http\\Request))
-#12 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
-#13 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
-#14 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\AdminSeller\\CaptainController), 'index')
-#15 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
-#16 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(680): Illuminate\\Routing\\Route->run()
-#17 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#18 D:\ohit\\buzzed\\buzzed\\app\\Http\\Middleware\\RedirectIfNotAdmin.php(24): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#19 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): App\\Http\\Middleware\\RedirectIfNotAdmin->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#20 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#21 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#22 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#23 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#24 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#25 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'admin')
-#26 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#27 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#28 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#29 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#30 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#31 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#32 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#33 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#34 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#35 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#36 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#37 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#38 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#39 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#40 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#41 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#42 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#43 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#44 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
-#45 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
-#46 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
-#47 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
-#48 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
-#49 D:\ohit\\buzzed\\buzzed\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#50 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#51 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#52 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#53 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#54 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#55 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#56 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#57 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#58 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#59 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#60 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#61 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#62 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#63 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#64 D:\ohit\\buzzed\\buzzed\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#65 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#66 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#67 D:\ohit\\buzzed\\buzzed\\vendor\\dingo\\api\\src\\Http\\Middleware\\Request.php(111): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#68 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Dingo\\Api\\Http\\Middleware\\Request->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#69 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#70 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#71 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#72 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
-#73 D:\ohit\\buzzed\\buzzed\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
-#74 D:\ohit\\buzzed\\buzzed\\server.php(21): require_once('D:\\\ohit\\\\buzzed...')
-#75 {main}
-"} 
-[2021-10-25 16:48:30] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'admin_buzzed.captain' doesn't exist (SQL: select * from `captain` where `captain`.`deleted_at` is null) {"userId":1,"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'admin_buzzed.captain' doesn't exist (SQL: select * from `captain` where `captain`.`deleted_at` is null) at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'admin_buzzed.captain' doesn't exist at D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:326)
-[stacktrace]
-#0 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
-#1 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(333): Illuminate\\Database\\Connection->run('select * from `...', Array, Object(Closure))
-#2 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2130): Illuminate\\Database\\Connection->select('select * from `...', Array, true)
-#3 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2118): Illuminate\\Database\\Query\\Builder->runSelect()
-#4 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2604): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
-#5 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2119): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
-#6 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(521): Illuminate\\Database\\Query\\Builder->get(Array)
-#7 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(505): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
-#8 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->get()
-#9 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1618): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'get', Array)
-#10 D:\ohit\\buzzed\\buzzed\\app\\Http\\Controllers\\AdminSeller\\CaptainController.php(31): Illuminate\\Database\\Eloquent\\Model->__call('get', Array)
-#11 [internal function]: App\\Http\\Controllers\\AdminSeller\\CaptainController->index(Object(Illuminate\\Http\\Request))
-#12 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
-#13 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
-#14 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\AdminSeller\\CaptainController), 'index')
-#15 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
-#16 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(680): Illuminate\\Routing\\Route->run()
-#17 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#18 D:\ohit\\buzzed\\buzzed\\app\\Http\\Middleware\\RedirectIfNotAdmin.php(24): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#19 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): App\\Http\\Middleware\\RedirectIfNotAdmin->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#20 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#21 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#22 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#23 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#24 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#25 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'admin')
-#26 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#27 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#28 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#29 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#30 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#31 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#32 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#33 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(56): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#34 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#35 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#36 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#37 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#38 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#39 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#40 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#41 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#42 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#43 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#44 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(657): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
-#45 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(623): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
-#46 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(612): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
-#47 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
-#48 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
-#49 D:\ohit\\buzzed\\buzzed\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#50 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#51 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#52 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#53 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#54 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#55 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#56 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#57 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#58 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#59 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#60 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#61 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#62 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#63 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#64 D:\ohit\\buzzed\\buzzed\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#65 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#66 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#67 D:\ohit\\buzzed\\buzzed\\vendor\\dingo\\api\\src\\Http\\Middleware\\Request.php(111): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#68 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(163): Dingo\\Api\\Http\\Middleware\\Request->handle(Object(Illuminate\\Http\\Request), Object(Closure))
-#69 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
-#70 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
-#71 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
-#72 D:\ohit\\buzzed\\buzzed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
-#73 D:\ohit\\buzzed\\buzzed\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
-#74 D:\ohit\\buzzed\\buzzed\\server.php(21): require_once('D:\\\ohit\\\\buzzed...')
-#75 {main}
-"} 
-[2021-10-25 17:22:06] local.ERROR: InvalidArgumentException: Route [admin.outlet.destory] not defined. in D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:388
-Stack trace:
-#0 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(782): Illuminate\Routing\UrlGenerator->route('admin.outlet.de...', Array, true)
-#1 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\OutletController.php(39): route('admin.outlet.de...')
-#2 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Utilities\Helper.php(65): App\Http\Controllers\AdminSeller\OutletController->App\Http\Controllers\AdminSeller\{closure}(Object(App\Models\Captain))
-#3 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(131): Yajra\DataTables\Utilities\Helper::compileContent(Object(Closure), Array, Object(App\Models\Captain))
-#4 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\Processors\DataProcessor.php(105): Yajra\DataTables\Processors\DataProcessor->addColumns(Array, Object(App\Models\Captain))
-#5 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\DataTableAbstract.php(753): Yajra\DataTables\Processors\DataProcessor->process(true)
-#6 D:\rohit\buzzed\buzzed\vendor\yajra\laravel-datatables-oracle\src\CollectionDataTable.php(164): Yajra\DataTables\DataTableAbstract->processResults(Array, true)
-#7 D:\rohit\buzzed\buzzed\app\Http\Controllers\AdminSeller\OutletController.php(58): Yajra\DataTables\CollectionDataTable->make(true)
-#8 [internal function]: App\Http\Controllers\AdminSeller\OutletController->index(Object(Illuminate\Http\Request))
-#9 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(54): call_user_func_array(Array, Array)
-#10 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('index', Array)
-#11 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(219): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\AdminSeller\OutletController), 'index')
-#12 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Route.php(176): Illuminate\Routing\Route->runController()
-#13 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(680): Illuminate\Routing\Route->run()
-#14 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#15 D:\rohit\buzzed\buzzed\app\Http\Middleware\RedirectIfNotAdmin.php(24): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#16 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): App\Http\Middleware\RedirectIfNotAdmin->handle(Object(Illuminate\Http\Request), Object(Closure))
-#17 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#18 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#19 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
-#20 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#21 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php(43): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#22 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'admin')
-#23 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#24 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php(75): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#25 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
-#26 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#27 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#28 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#29 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#30 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(56): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#31 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
-#32 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#33 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#34 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
-#35 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#36 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php(66): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#37 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#38 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#39 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#40 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(682): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#41 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(657): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
-#42 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(623): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
-#43 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Router.php(612): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
-#44 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
-#45 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
-#46 D:\rohit\buzzed\buzzed\vendor\fruitcake\laravel-cors\src\HandleCors.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#47 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fruitcake\Cors\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
-#48 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#49 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#50 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#51 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#52 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#53 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
-#54 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#55 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#56 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
-#57 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#58 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(62): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#59 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
-#60 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#61 D:\rohit\buzzed\buzzed\vendor\fideloper\proxy\src\TrustProxies.php(57): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#62 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Fideloper\Proxy\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
-#63 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#64 D:\rohit\buzzed\buzzed\vendor\dingo\api\src\Http\Middleware\Request.php(111): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#65 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(163): Dingo\Api\Http\Middleware\Request->handle(Object(Illuminate\Http\Request), Object(Closure))
-#66 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
-#67 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
-#68 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
-#69 D:\rohit\buzzed\buzzed\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
-#70 D:\rohit\buzzed\buzzed\public\index.php(55): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
-#71 D:\rohit\buzzed\buzzed\server.php(21): require_once('D:\\rohit\\buzzed...')
-#72 {main}  

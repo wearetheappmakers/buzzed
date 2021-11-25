@@ -81,6 +81,12 @@
     @endphp
 @endif
 
+@if(Auth::guard('customer')->check())
+    @php 
+        $status = route('customer.change-multiple-status');
+    @endphp
+@endif
+
 @if(isset($is_orderby) && $is_orderby == 'yes')
 
 @if(Auth::guard('vendor')->check())
