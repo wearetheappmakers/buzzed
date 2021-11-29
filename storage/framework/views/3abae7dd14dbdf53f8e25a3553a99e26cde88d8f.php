@@ -22,14 +22,14 @@
             <label>Outlet:</label>
             <select class="form-control" name="outlet" required="">
                 <option value="">-- Select Outlet --</option>
-                @if(!empty($outlet))
-                    @foreach($outlet as $ol)
-                        <option value="{{ $ol->id }}">{{ $ol->name }}</option>
-                    @endforeach
-                @endif
+                <?php if(!empty($outlet)): ?>
+                    <?php $__currentLoopData = $outlet; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ol): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <option value="<?php echo e($ol->id); ?>"><?php echo e($ol->name); ?></option>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
             </select>
         </div>
 
     </div>
-    @include('admin.layout.status_checkbox',array('data' => ""))
-</div>
+    <?php echo $__env->make('admin.layout.status_checkbox',array('data' => ""), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+</div><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/adminseller/captain/create.blade.php ENDPATH**/ ?>

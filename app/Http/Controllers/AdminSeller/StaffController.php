@@ -7,6 +7,7 @@ use App\Models\Staff;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Helpers\ImageHelper;
 use DataTables;
 use App\Http\Requests\ColorRequest;
 use DB;
@@ -95,6 +96,11 @@ class StaffController extends Controller
         $param['password'] = isset($param['spassword']) ? bcrypt($param['spassword']) : bcrypt(12345678);
         unset($param['status']);
 
+        if ($request->hasFile('image')) {
+            $name = ImageHelper::saveUploadedImage(request()->image, 'Product', storage_path("app/public/uploads/users/"));
+            $param['image']= $name;
+        }
+
         $color = $this->model->create($param);
         $color->status=$status;
         $color->save();
@@ -144,9 +150,15 @@ class StaffController extends Controller
     public function update(Request $request, $id)
     {
         $param = $request->all();
+        $user = $this->model->findOrFail($id);
         $status=empty($request->status)? 0 : $request->status;
         unset($param['_token'], $param['_method'],$param['status']);
         $param['password'] = isset($param['spassword']) ? bcrypt($param['spassword']) : bcrypt(12345678);
+
+        if ($request->hasFile('image')) {
+            $name = ImageHelper::saveUploadedImage(request()->image, 'Product', storage_path("app/public/uploads/users/"), $user->image);
+            $param['image']= $name;
+        }
         
         $color = $this->model->where('id', $id)->first();
         $color->status=$status;

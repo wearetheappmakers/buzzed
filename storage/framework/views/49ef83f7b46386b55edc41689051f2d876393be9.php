@@ -13,7 +13,7 @@
             </select>
         </div>
     </div>
-    @include('admin.layout.status_checkbox',array('data' => ""))
+    <?php echo $__env->make('admin.layout.status_checkbox',array('data' => ""), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </div>
 
 <script type="text/javascript">
@@ -25,4 +25,4 @@
         }
         return true;
     }
-</script>
+</script><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/adminseller/membershipamount/create.blade.php ENDPATH**/ ?>

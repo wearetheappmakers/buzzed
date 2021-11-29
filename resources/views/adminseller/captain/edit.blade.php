@@ -13,6 +13,16 @@ $outlet = $data['outlet'];
             <input type="text" class="form-control" placeholder="Enter number" onkeypress="return isNumber(event)" maxlength="10" name="number" value="{{$edit->number}}" id="number" required autocomplete="off">
         </div>
         <div class="col-lg-4">
+            <label>Email:</label>
+            <input type="text" class="form-control" placeholder="Enter email" value="{{ $edit->email }}" name="email" id="email" required autocomplete="off" required="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-4">
+            <label>Password:</label>
+            <input type="password" class="form-control" value="{{ $edit->spassword }}" placeholder="Enter password" name="spassword" id="spassword" required autocomplete="off">
+        </div>
+        <div class="col-lg-4">
             <label>Outlet:</label>
             <select class="form-control" name="outlet" required="">
                 <option value="">-- Select Outlet --</option>

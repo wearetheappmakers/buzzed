@@ -1,6 +1,4 @@
-@extends('admin.main')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
@@ -21,7 +19,8 @@
 
                             <h3 class="kt-portlet__head-title">
 
-                                 {{ $title }}
+                                 <?php echo e($title); ?>
+
 
                             </h3>
 
@@ -29,9 +28,9 @@
 
                     </div>
 
-                    <form class="kt-form kt-form--label-right add_form" method="post" action="{{$url}}">
+                    <form class="kt-form kt-form--label-right add_form" method="post" action="<?php echo e($url); ?>">
 
-                        @csrf
+                        <?php echo csrf_field(); ?>
                         <div class="kt-portlet__body">
                             <div class="form-group row">
                                 <div class="col-lg-4">
@@ -95,11 +94,11 @@
                                     <input type="text" class="form-control" readonly="" id="amount" name="amount" required="" style="background-color: #e2e5ec">
                                     <!-- <select class="form-control" name="amount" required="">
                                         <option value="">--Select Membership Amount--</option>
-                                        @if(!empty($membershipamount))
-                                            @foreach($membershipamount as $ma)
-                                                <option value="{{ $ma->amount }}">{{ $ma->amount }}</option>
-                                            @endforeach
-                                        @endif
+                                        <?php if(!empty($membershipamount)): ?>
+                                            <?php $__currentLoopData = $membershipamount; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ma): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <option value="<?php echo e($ma->amount); ?>"><?php echo e($ma->amount); ?></option>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
                                     </select> -->
                                      <!-- <input type="text" class="form-control" placeholder="Enter Membership Amount" onkeypress="return isNumber(event)" name="amount" id="amount" required autocomplete="off"> -->
                                 </div>
@@ -144,7 +143,7 @@
 
                                         <button type="button" class="btn btn-primary submit change_button">Submit<i class="la la-spinner change_spin d-none"></i></button>
 
-                                        <a href="{{ $index }}"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                                        <a href="<?php echo e($index); ?>"><button type="button" class="btn btn-secondary">Cancel</button></a>
 
                                     </div>
 
@@ -166,13 +165,13 @@
 
 </div>
 
-@if(Auth::guard('admin')->check())
-    @php $url = route('admin.vendors.store'); @endphp
-@endif
+<?php if(Auth::guard('admin')->check()): ?>
+    <?php $url = route('admin.vendors.store'); ?>
+<?php endif; ?>
 
-@if(Auth::guard('manager')->check())
-    @php $url = route('manager.vendors.store'); @endphp
-@endif
+<?php if(Auth::guard('manager')->check()): ?>
+    <?php $url = route('manager.vendors.store'); ?>
+<?php endif; ?>
 
 <script>
 
@@ -193,7 +192,7 @@
 
                     type: "POST",
 
-                    url: "{{ $url }}",
+                    url: "<?php echo e($url); ?>",
 
                     data: new FormData($('.add_form')[0]),
 
@@ -205,9 +204,9 @@
 
                         if (data.status === 'success') {
                             
-                            window.location = "{{ $index }}";
+                            window.location = "<?php echo e($index); ?>";
 
-                            toastr["success"]("{{ $module }} Added Successfully", "Success");
+                            toastr["success"]("<?php echo e($module); ?> Added Successfully", "Success");
 
                             
 
@@ -268,4 +267,6 @@
 
 
 
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/adminseller/vendors/create.blade.php ENDPATH**/ ?>

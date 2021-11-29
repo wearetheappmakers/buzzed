@@ -102,7 +102,7 @@ return [
 
         'waiters' => [
             'driver' => 'eloquent',
-            'model' => App\Staff::class,
+            'model' => App\Models\Captain::class,
         ],
 
         'managers' => [

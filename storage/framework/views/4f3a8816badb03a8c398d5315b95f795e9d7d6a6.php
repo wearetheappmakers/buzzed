@@ -200,7 +200,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo e(route('admin.outlet.index')); ?>" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Outlet</span></a></li>
 
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo e(route('admin.staff.index')); ?>" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Operations Manager / Waiters</span></a></li>
+							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="<?php echo e(route('admin.staff.index')); ?>" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Operations Manager</span></a></li>
 
 
 

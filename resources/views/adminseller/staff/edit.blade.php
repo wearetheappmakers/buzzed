@@ -25,13 +25,30 @@ $edit = $data['edit'];
                 <option value="3" @if($edit->gender == 3) selected @endif>Other</option>
             </select>
         </div>
-        <div class="col-lg-4">
+        <!-- <div class="col-lg-4">
             <label>Role:</label>
              <select class="form-control" name="role">
                 <option value="1" @if($edit->role == 1) selected @endif>Operations Manager</option>
                 <option value="2" @if($edit->role == 2) selected @endif>Waiters</option>
             </select>
+        </div> -->
+        <div class="col-lg-4">
+            <label>Upload ID/Proof Image:</label>
+            <input type="file" class="form-control" name="image">
         </div>
+        <div class="col-lg-4">
+             @if($edit->image)
+                <div class="image_layer">
+                    <div class="image_div">
+                        <a target="_blank"  href="{{ url('storage/uploads/users/'.$edit->image) }}" rel="gallery" class="fancybox" title="">
+                            <img src="{{ url('storage/uploads/users/Tiny/'.$edit->image) }}" class="img-thumbnail" alt="{{ $edit->image }}" />
+                        </a>
+                    </div>
+                </div>
+            @endif
+        </div>
+    </div>
+    <div class="form-group row">
         <div class="col-lg-4">
             <label>Password:</label>
             <input type="password" class="form-control" value="{{ $edit->spassword }}" placeholder="Enter password" name="spassword" id="spassword" required autocomplete="off">

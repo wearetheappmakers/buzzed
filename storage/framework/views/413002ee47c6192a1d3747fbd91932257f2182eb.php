@@ -38,4 +38,4 @@
             <input type="file" class="form-control" name="image">
         </div>
 </div>
-@include('admin.layout.status_checkbox',array('data' => ""))
+<?php echo $__env->make('admin.layout.status_checkbox',array('data' => ""), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/adminseller/staff/create.blade.php ENDPATH**/ ?>

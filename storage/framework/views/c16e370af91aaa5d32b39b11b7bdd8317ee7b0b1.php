@@ -1,0 +1,1 @@
+<input type="checkbox" class="allcheckbox" value="<?php echo e($id); ?>" /><?php /**PATH D:\rohit\buzzed\buzzed\resources\views/admin/layout/checkbox.blade.php ENDPATH**/ ?>

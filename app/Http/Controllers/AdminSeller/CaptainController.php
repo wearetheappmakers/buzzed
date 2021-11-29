@@ -114,6 +114,7 @@ class CaptainController extends Controller
         // exit;
         // dd($request->all());
         $param = $request->all();
+        $param['password'] = isset($param['spassword']) ? bcrypt($param['spassword']) : bcrypt(12345678);
         $status=empty($request->status)? 0 : $request->status;
         unset($param['status']);
 
