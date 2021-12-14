@@ -54,7 +54,12 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
-         $request->validate([
+
+        Auth::guard('admin')->logout();
+        Auth::guard('manager')->logout();
+        Auth::guard('customer')->logout();
+
+        $request->validate([
             'email' => 'required',
             'password' => 'required',
         ]);

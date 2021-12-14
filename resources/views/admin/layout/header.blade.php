@@ -201,29 +201,6 @@ License: You must have a valid license purchased only from themeforest(the above
 							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.outlet.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Outlet</span></a></li>
 
 							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.staff.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-users"></i><span class="kt-menu__link-text">Operations Manager</span></a></li>
-
-
-
-							<!-- <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.brand.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-bookmark"></i><span class="kt-menu__link-text">Brand</span></a></li>
-
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.banner.index',array('type'=>'Banner'))}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-map"></i><span class="kt-menu__link-text">Banner Images</span></a></li>
-
-						 	<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.category.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fas fa-clipboard-list"></i><span class="kt-menu__link-text">Category</span></a></li>
-							
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.image_optimize.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-file-image"></i><span class="kt-menu__link-text">Image Optimize</span></a></li>
-							
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.product.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-box"></i><span class="kt-menu__link-text">Product</span></a></li>
-							
-							
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.reviewrating.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-ticket-alt"></i><span class="kt-menu__link-text">Review</span></a></li>
-
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.offer.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-gift"></i><span class="kt-menu__link-text">offers</span></a></li>
-
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.discount.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-tag"></i><span class="kt-menu__link-text">Discount</span></a></li>
-
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.revenue.index')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-percent"></i><span class="kt-menu__link-text">Commision Report</span></a></li>
-
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{route('admin.general.setting')}}" class="kt-menu__link "><i class="kt-menu__link-icon fa fa-cog"></i><span class="kt-menu__link-text">Settings</span></a></li> -->
 												
 							@endif
 						</ul>
@@ -302,82 +279,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						<div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
 
 							<ul class="kt-menu__nav ">
-								<!-- <li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="{{route('admin.home')}}" class="kt-menu__link "><span class="kt-menu__link-text">Dashboard</span></a></li> -->
-
 								
-
-							<!-- @if(Auth::guard('admin')->check())
-
-								@if(Auth::user()->orders == 1)
-								<li class="kt-menu__item kt-menu__item--active kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open-dropdown" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Order</span><i class="kt-menu__hor-arrow la la-angle-down"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
-										<ul class="kt-menu__subnav">
-											@if(Auth::user()->id == 1)
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.orderstatus.index')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Order Status Master</span></a></li>
-											@endif
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.order.index')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">All Order List</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.order.status.index',2)}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Preparing Order List</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.order.status.index',4)}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Completed Order List</span></a></li>
-											
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.order.status.index',5)}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Cancelled Order List</span></a></li>
-											
-										</ul>
-									</div>
-								</li>
-								@endif 
-								@if(Auth::user()->id == 1)
-								<li class="kt-menu__item kt-menu__item--active kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open-dropdown" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Vendors</span><i class="kt-menu__hor-arrow la la-angle-down"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
-										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.vendors.index','all')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">All</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.vendors.index',1)}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Active</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.vendors.index',0)}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">InActive</span></a></li>
-										</ul>
-									</div>
-								</li>
-								@endif
-
-								@if(Auth::user()->id == 1)
-								<li class="kt-menu__item kt-menu__item--active kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open-dropdown" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">User</span><i class="kt-menu__hor-arrow la la-angle-down"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
-										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.user.index','all')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">All</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.user.index',1)}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Active</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.user.index',0)}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">InActive</span></a></li>
-										</ul>
-									</div>
-								</li>
-								@endif
-
-								@if(Auth::user()->id == 1)
-								<li class="kt-menu__item kt-menu__item--active kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open-dropdown" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Location Managemet</span><i class="kt-menu__hor-arrow la la-angle-down"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
-										<ul class="kt-menu__subnav">
-											
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.country.index')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Country</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.state.index')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">State</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.city.index')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">City</span></a></li>
-										</ul>
-									</div>
-								</li>
-								@endif
-
-								@if(Auth::user()->products == 1)
-								<li class="kt-menu__item kt-menu__item--active kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open-dropdown" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Product Master</span><i class="kt-menu__hor-arrow la la-angle-down"></i><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
-										<ul class="kt-menu__subnav">
-
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.color.index')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Colors</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.size.index')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Sizes</span></a></li>
-											
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.option.index')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Option</span></a></li>
-
-											<li class="kt-menu__item " aria-haspopup="true"><a href="{{route('admin.option-value.index')}}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Option Value</span></a></li>
-										</ul>
-									</div>
-								</li>
-								@endif
-							@endif -->
 							</ul>
 
 						</div>

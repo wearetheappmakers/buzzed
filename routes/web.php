@@ -80,6 +80,8 @@ Route::group(['prefix' => 'manager'], function () {
     return view('manager.home');
   })->name('home');
 
+  
+  Route::group(['middleware' => 'auth:manager'], function () {
   Route::group(['prefix' => 'captain'], function () {
     Route::get('/', 'AdminSeller\CaptainController@index')->name('manager.captain.index');
     Route::get('/create', 'AdminSeller\CaptainController@create')->name('manager.captain.create');
@@ -101,6 +103,7 @@ Route::group(['prefix' => 'manager'], function () {
 
   Route::get('/change-multiple-status', 'AdminSeller\HomeController@changeMultipleStatus')->name('manager.change-multiple-status');
 
+  });
 });
 
 Route::group(['prefix' => 'waiter'], function () {
